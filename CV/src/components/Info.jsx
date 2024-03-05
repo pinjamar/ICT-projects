@@ -2,8 +2,8 @@
 function Info(props) {
   return (
     <div className="info">
-      <span>{props.question}</span>
-      <span>{props.answer}</span>
+      <span className="question">{props.question}</span>
+      <span className="answer">{props.answer}</span>
     </div>
   );
 }

@@ -1,10 +1,12 @@
 /* eslint-disable react/prop-types */
 function Skills(props) {
   return (
-    <div>
-      <p>{props.skill}</p>
+    <div className="skill-card">
+      <p className="skill-name">{props.skill}</p>
       <div className="progress">
-        <div className="level"></div>
+        <div className="level" style={{ width: `${props.width}%` }}>
+          {props.percentage}
+        </div>
       </div>
     </div>
   );

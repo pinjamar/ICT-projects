@@ -12,14 +12,14 @@ function App() {
       </h1>
       <img src={profilePicture} className="profile" alt="" />
       <Card title="Opći podaci">
-        <Info question="pitranje" answer="odgobor" />
-        <Info question="pitranje" answer="odgobor" />
-        <Info question="pitranje" answer="odgobor" />
+        <Info question="Datum rođenja:" answer="26. veljače, 1989." />
+        <Info question="Adresa:" answer="Iločka 21, Split" />
+        <Info question="Kontakt:" answer="github.com/pinjamar" />
       </Card>
       <Card title="Sposobnosti">
-        <Skills skill="Detektivske vještine:" />
-        <Skills skill="Borilačke vještine:" />
-        <Skills skill="JavaScript:" />
+        <Skills skill="Detektivske vještine:" percentage="100" />
+        <Skills skill="Borilačke vještine:" percentage="90" width="90" />
+        <Skills skill="JavaScript:" percentage="77" width="77" />
       </Card>
     </div>
   );
