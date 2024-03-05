@@ -1,0 +1,59 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background-color: #242424;
+}
+/*GENERAL*************/
+.title {
+  color: #988726;
+  font-size: 4em;
+  line-height: 1;
+  margin: 0;
+}
+.name {
+  text-decoration: line-through #505e7b;
+}
+.profile {
+  height: 10em;
+  transition: filter 400ms;
+  border-radius: 50%;
+  border: 5px solid #505e7b;
+  margin-top: 15px;
+}
+.profile:hover {
+  filter: drop-shadow(0 0 2em #c4ff64aa);
+}
+
+/*CARD**************/
+.card {
+  padding: 1em;
+  border: 2px solid #555e79;
+  border-radius: 10px;
+  margin: 15px 0;
+  background-color: #272e3c;
+}
+.card-title {
+  color: #555e79;
+}
+hr {
+  border: 1px solid #555e79;
+}
+
+/*CARD*/
+.progress {
+  position: relative;
+  height: 30px;
+  width: 100%;
+  border: 1px solid #fdff00;
+  border-radius: 10px;
+}
+
+.level {
+  position: absolute;
+  background-color: #ffffff;
+  width: 0px;
+  height: 10px;
+  border-radius: 15px;
+}
