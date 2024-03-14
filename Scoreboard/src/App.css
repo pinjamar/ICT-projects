@@ -18,7 +18,7 @@ body {
   margin: 0;
   /* display: flex; */
   place-items: center;
-  height: 80vh;
+  /* height: 80vh; */
   background-color: #cadeef;
   max-width: 80vw;
   border-radius: 30px;
@@ -28,22 +28,17 @@ h1 {
   font-size: 40px;
 }
 header {
-  /* border: 2px solid white; */
   max-width: 100%;
-  /* width: 1250px; */
   margin: 0 auto;
-  margin-top: 2em;
   border-bottom: 5px solid rgb(167, 160, 160);
-  padding: 2em;
+  padding: 1em;
   display: block;
 }
 .results {
   max-width: 100%;
   width: 1000px;
-  /* border: 2px solid white; */
   margin: 0 auto;
   display: flex;
-  margin-top: 0.3em;
   justify-content: space-around;
   padding: 1em;
 }
@@ -58,7 +53,9 @@ header {
 h2 {
   font-size: 2rem;
   font-weight: 600;
+  color: #0784b5;
 }
+
 .score-wrapper {
   align-self: center;
 }
@@ -77,4 +74,37 @@ h2 {
 
 img {
   height: 160px;
+}
+
+.stats {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: #9bd4e4;
+  border-radius: 0 0 30px 30px;
+  margin-top: 30px;
+}
+
+span {
+  margin-right: 8px;
+}
+
+.shots,
+.possession,
+.passes,
+.fouls,
+.corners,
+.offsides,
+.penalties,
+.yellows,
+.reds {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.stat-btn {
+  padding: 0.3rem;
+  color: lightcoral;
 }
