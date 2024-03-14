@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Statistics = () => {
   return (
     <div>
@@ -10,7 +8,6 @@ const Statistics = () => {
         <span>Dodavanja</span>
         <span>Prekrsaji</span>
         <span>Korneri</span>
-        <span>Auti</span>
         <span>Zaledja</span>
         <span>Jedanaesterci</span>
         <span>Zuti kartoni</span>
