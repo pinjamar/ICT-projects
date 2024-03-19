@@ -1,15 +1,22 @@
-import { useState } from 'react';
-
-const Statistics = () => {
-  const [udarci, setUdarci] = useState(0);
-  const [posjed, setPosjed] = useState(0);
-  const [dodavanja, setDodavanja] = useState(0);
-  const [prekrsaji, setPrekrsaji] = useState(0);
-  const [korneri, setKorneri] = useState(0);
-  const [zaledja, setZaledja] = useState(0);
-  const [penali, setPenali] = useState(0);
-  const [zuti, setZuti] = useState(0);
-  const [crveni, setCrveni] = useState(0);
+const Statistics = (props) => {
+  const udarci = props.udarci;
+  const setUdarci = props.setUdarci;
+  const posjed = props.posjed;
+  const setPosjed = props.setPosjed;
+  const dodavanja = props.dodavanja;
+  const setDodavanja = props.setDodavanja;
+  const prekrsaji = props.prekrsaji;
+  const setPrekrsaji = props.setPrekrsaji;
+  const korneri = props.korneri;
+  const setKorneri = props.setKorneri;
+  const zaledja = props.zaledja;
+  const setZaledja = props.setZaledja;
+  const penali = props.penali;
+  const setPenali = props.setPenali;
+  const zuti = props.zuti;
+  const setZuti = props.setZuti;
+  const crveni = props.crveni;
+  const setCrveni = props.setCrveni;
 
   return (
     <div className="stats">
