@@ -1,13 +1,9 @@
-import { useState } from 'react';
+const Result = (props) => {
+  const golDomaci = props.golDomaci;
+  const golGosti = props.golGosti;
+  const promjenaDomaci = props.promjenaDomaci;
+  const promjenaGosti = props.promjenaGosti;
 
-const Result = () => {
-  const [golDomaci, promjenaDomaci] = useState(0);
-  const [golGosti, promjenaGosti] = useState(0);
-
-  function reset() {
-    promjenaDomaci(0);
-    promjenaGosti(0);
-  }
   return (
     <div className="score-wrapper">
       <div className="score">
@@ -46,7 +42,7 @@ const Result = () => {
         </div>
       </div>
       <button
-        onClick={() => reset()}
+        onClick={() => props.reset()}
         style={{ width: '100%', fontSize: '20px', marginTop: '20px' }}
       >
         Reset

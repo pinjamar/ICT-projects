@@ -1,25 +1,35 @@
 import { useState, useEffect } from 'react';
 
-const getTimeLeft = () => {
-  const totalTimeLeft = 5400000;
-  const minutes = Math.floor((totalTimeLeft / (1000 * 60)) % 60);
-  const seconds = Math.floor((totalTimeLeft / 1000) % 60);
-
-  return { minutes, seconds };
+const timeByAddingMinutes = (date, intMinutes) => {
+  return new Date(date.getTime() + intMinutes * 60000);
 };
 
-const Header = () => {
-  const [timeLeft, setTimeLeft] = useState(() => getTimeLeft());
+const minutesSecondsFromDate = (date) => {
+  var intervalSeconds = Math.floor((new Date() - date) / 1000);
+  var minutes = Math.floor(intervalSeconds / 60);
+  var seconds = intervalSeconds - minutes * 60;
+
+  return {
+    minutes: minutes,
+    seconds: seconds,
+  };
+};
+
+const Header = (props) => {
+  const startDate = props.startDate;
+  const [elapsedTime, setElapsedTime] = useState(
+    minutesSecondsFromDate(startDate)
+  );
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setTimeLeft(getTimeLeft());
-    }, 1000);
+      setElapsedTime(minutesSecondsFromDate(startDate));
+    }, 500);
 
     return () => {
       clearInterval(timer);
     };
-  }, []);
+  }, [startDate]);
 
   return (
     <header>
@@ -32,7 +42,7 @@ const Header = () => {
           justifyContent: 'center',
         }}
       >
-        {Object.entries(timeLeft).map((el) => {
+        {Object.entries(elapsedTime).map((el) => {
           const label = el[0];
           const value = el[1];
           return (
