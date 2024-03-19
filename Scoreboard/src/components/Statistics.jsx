@@ -21,7 +21,7 @@ const Statistics = (props) => {
   return (
     <div className="stats">
       <div className="stats1">
-        <div className="shots">
+        <div className="shots stat-field">
           <span>Udarci</span>
           <div className="stat-number">
             <button
@@ -40,7 +40,7 @@ const Statistics = (props) => {
             </button>
           </div>
         </div>
-        <div className="possession">
+        <div className="possession stat-field">
           <span>Posjed</span>
           <div className="stat-number">
             <button
@@ -59,7 +59,7 @@ const Statistics = (props) => {
             </button>
           </div>
         </div>
-        <div className="passes">
+        <div className="passes stat-field">
           <span>Dodavanja</span>
           <div className="stat-number">
             <button
@@ -84,7 +84,7 @@ const Statistics = (props) => {
         </div>
       </div>
       <div className="stats2">
-        <div className="fouls">
+        <div className="fouls stat-field">
           <span>Prekrsaji</span>
           <div className="stat-number">
             <button
@@ -107,7 +107,7 @@ const Statistics = (props) => {
             </button>
           </div>
         </div>
-        <div className="corners">
+        <div className="corners stat-field">
           <span>Korneri</span>
           <div className="stat-number">
             <button
@@ -129,7 +129,7 @@ const Statistics = (props) => {
             </button>
           </div>
         </div>
-        <div className="offsides">
+        <div className="offsides stat-field">
           <span>Zaledja</span>
           <div className="stat-number">
             <button
@@ -153,7 +153,7 @@ const Statistics = (props) => {
         </div>
       </div>
       <div className="stats3">
-        <div className="penalties">
+        <div className="penalties stat-field">
           <span>Jedanaesterci</span>
           <div className="stat-number">
             <button
@@ -172,7 +172,7 @@ const Statistics = (props) => {
             </button>
           </div>
         </div>
-        <div className="yellows">
+        <div className="yellows stat-field">
           <span>Zuti kartoni</span>
           <div className="stat-number">
             <button
@@ -191,7 +191,7 @@ const Statistics = (props) => {
             </button>
           </div>
         </div>
-        <div className="reds">
+        <div className="reds stat-field">
           <span>Crveni karton</span>
           <div className="stat-number">
             <button

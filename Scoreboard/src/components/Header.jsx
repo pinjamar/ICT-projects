@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 
-const timeByAddingMinutes = (date, intMinutes) => {
-  return new Date(date.getTime() + intMinutes * 60000);
-};
+// const timeByAddingMinutes = (date, intMinutes) => {
+//   return new Date(date.getTime() + intMinutes * 60000);
+// };
 
 const minutesSecondsFromDate = (date) => {
   var intervalSeconds = Math.floor((new Date() - date) / 1000);

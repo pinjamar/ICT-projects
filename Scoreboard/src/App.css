@@ -16,9 +16,7 @@ body {
 }
 .board {
   margin: 0;
-  /* display: flex; */
   place-items: center;
-  /* height: 80vh; */
   background-color: #cadeef;
   max-width: 80vw;
   border-radius: 30px;
@@ -95,15 +93,7 @@ span {
   margin-right: 8px;
 }
 
-.shots,
-.possession,
-.passes,
-.fouls,
-.corners,
-.offsides,
-.penalties,
-.yellows,
-.reds {
+.stat-field {
   display: flex;
   justify-content: space-between;
   padding: 15px;
