@@ -16,7 +16,7 @@ const PaymentForm = () => {
   };
 
   return (
-    <div className="nacin">
+    <div className="form-element-wrapper">
       <h2>Način plaćanja</h2>
       <form onSubmit={handlePayment} className="form-element">
         <div>

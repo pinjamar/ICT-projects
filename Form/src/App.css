@@ -10,21 +10,31 @@
   padding: auto;
   place-items: center;
   background-color: #dedede;
-  max-width: 80vw;
+  width: 40vw;
   border-radius: 20px;
+}
+
+.form-element-wrapper {
+  display: flex;
+  flex-direction: column;
 }
 
 .form-element {
   border: 3px solid rgb(173, 198, 230);
-  border-radius: 0.5em;
+  border-radius: 1em;
   padding: 1em;
   font-weight: bold;
-  margin: 50px 30px;
+  width: 80%;
+  align-self: center;
 }
 
 .terms-confirmation {
   text-align: left;
   margin-left: 30px;
+}
+
+.text-input {
+  width: 100%;
 }
 input[type='checkbox'] {
   transform: scale(1.5);

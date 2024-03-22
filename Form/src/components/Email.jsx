@@ -25,7 +25,7 @@ const Email = () => {
   };
 
   return (
-    <div>
+    <div className="form-element-wrapper">
       <h2>Kontakt</h2>
       <form onSubmit={handleEmail} className="form-element">
         <input
@@ -35,6 +35,7 @@ const Email = () => {
           value={email}
           onChange={handleEmailChange}
           style={{ borderColor: isValid ? 'initial' : 'red' }}
+          className="text-input"
         />
         {!isValid && (
           <p style={{ color: 'red' }}>Molimo unesite valjanu email adresu.</p>

@@ -48,7 +48,7 @@ const Contact = () => {
   };
 
   return (
-    <div>
+    <div className="form-element-wrapper">
       <h2>Adresa</h2>
       <form onSubmit={handleSubmit} className="form-element">
         <div>
@@ -59,6 +59,7 @@ const Contact = () => {
             value={name}
             onChange={(e) => setName(e.target.value)}
             onBlur={validateName}
+            className="text-input"
           />
           {nameError && <span style={{ color: 'red' }}>{nameError}</span>}
         </div>
@@ -69,6 +70,7 @@ const Contact = () => {
             value={country}
             onChange={(e) => setCountry(e.target.value)}
             onBlur={validateCountry}
+            className="text-input"
           >
             <option value="">Hrvatska</option>
             {countries.map((c) => (
@@ -86,6 +88,7 @@ const Contact = () => {
             value={address}
             onChange={(e) => setAddress(e.target.value)}
             onBlur={validateAddress}
+            className="text-input"
           />
           {addressError && <span style={{ color: 'red' }}>{addressError}</span>}
         </div>
