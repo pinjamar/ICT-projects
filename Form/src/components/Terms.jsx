@@ -21,7 +21,7 @@ const Terms = () => {
           checked={isChecked}
           onChange={handleCheckboxChange}
         />
-        <label htmlFor="myCheckbox">
+        <label htmlFor="myCheckbox" className="checkbox">
           <span className="acceptance">Prihvaćam uvjete narudžbe</span>
         </label>
       </div>

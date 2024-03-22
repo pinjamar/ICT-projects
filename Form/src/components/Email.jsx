@@ -13,9 +13,9 @@ const Email = () => {
   const handleEmail = (event) => {
     event.preventDefault();
     if (isValid) {
-      console.log('Email submitted:', email);
+      console.log('Email unesen:', email);
     } else {
-      console.log('Invalid email:', email);
+      console.log('Neispravan email:', email);
     }
   };
 
@@ -26,7 +26,7 @@ const Email = () => {
 
   return (
     <div className="form-element-wrapper">
-      <h2>Kontakt</h2>
+      <h2 className="email-title">Kontakt</h2>
       <form onSubmit={handleEmail} className="form-element">
         <input
           type="email"

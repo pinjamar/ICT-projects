@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const PaymentForm = () => {
-  const [paymentMethod, setPaymentMethod] = useState('');
+  const [paymentMethod, setPaymentMethod] = useState('gotovina');
 
   const handlePaymentChange = (event) => {
     setPaymentMethod(event.target.value);
@@ -9,37 +9,37 @@ const PaymentForm = () => {
 
   const handlePayment = () => {
     if (paymentMethod) {
-      console.log('Payment method selected:', paymentMethod);
+      console.log('Odabran način plaćanja:', paymentMethod);
     } else {
-      console.log('Please select a payment method');
+      console.log('Molimo odaberite način plaćanja!');
     }
   };
 
   return (
     <div className="form-element-wrapper">
-      <h2>Način plaćanja</h2>
-      <form onSubmit={handlePayment} className="form-element">
+      <h2 className="payment-title">Način plaćanja:</h2>
+      <form onSubmit={handlePayment} className="form-element payment-element">
         <div>
           <input
             type="radio"
-            id="cash"
+            id="gotovina"
             name="paymentMethod"
-            value="cash"
-            checked={paymentMethod === 'cash'}
+            value="gotovina"
+            checked={paymentMethod === 'gotovina'}
             onChange={handlePaymentChange}
           />
-          <label htmlFor="cash">Pouzeće</label>
+          <label htmlFor="gotovina">Pouzeće</label>
         </div>
         <div>
           <input
             type="radio"
-            id="card"
+            id="kartica"
             name="paymentMethod"
-            value="card"
-            checked={paymentMethod === 'card'}
+            value="kartica"
+            checked={paymentMethod === 'kartica'}
             onChange={handlePaymentChange}
           />
-          <label htmlFor="card">Kartica</label>
+          <label htmlFor="kartica">Kartica</label>
         </div>
       </form>
     </div>

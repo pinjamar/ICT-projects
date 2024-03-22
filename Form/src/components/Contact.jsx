@@ -11,7 +11,7 @@ const Contact = () => {
 
   const validateName = () => {
     if (!name) {
-      setNameError('Name is required');
+      setNameError('Molimo unesite ime!');
       return false;
     }
     setNameError('');
@@ -20,7 +20,7 @@ const Contact = () => {
 
   const validateCountry = () => {
     if (!country) {
-      setCountryError('Please select a country');
+      setCountryError('Molimo odaberite zemlju!');
       return false;
     }
     setCountryError('');
@@ -29,30 +29,32 @@ const Contact = () => {
 
   const validateAddress = () => {
     if (!address) {
-      setAddressError('Address is required');
+      setAddressError('Molimo unesite adresu!');
       return false;
     }
     setAddressError('');
     return true;
   };
 
-  const handleSubmit = (event) => {
+  const handleAddress = (event) => {
     event.preventDefault();
     const isNameValid = validateName();
     const isCountryValid = validateCountry();
     const isAddressValid = validateAddress();
 
     if (isNameValid && isCountryValid && isAddressValid) {
-      console.log('Form submitted:', { name, country, address });
+      console.log('Adresa unesena:', { name, country, address });
     }
   };
 
   return (
     <div className="form-element-wrapper">
-      <h2>Adresa</h2>
-      <form onSubmit={handleSubmit} className="form-element">
+      <h2 className="address-title">Adresa</h2>
+      <form onSubmit={handleAddress} className="form-element">
         <div>
-          <label htmlFor="name">Ime:</label>
+          <label htmlFor="name" className="name-label">
+            Ime:
+          </label>
           <input
             type="text"
             id="name"
@@ -63,14 +65,16 @@ const Contact = () => {
           />
           {nameError && <span style={{ color: 'red' }}>{nameError}</span>}
         </div>
-        <div>
-          <label htmlFor="country">Država:</label>
+        <div className="country-wrapper">
+          <label htmlFor="country" className="country-label">
+            Država:
+          </label>
           <select
             id="country"
             value={country}
             onChange={(e) => setCountry(e.target.value)}
             onBlur={validateCountry}
-            className="text-input"
+            className="text-input country-select"
           >
             <option value="">Hrvatska</option>
             {countries.map((c) => (
@@ -81,8 +85,10 @@ const Contact = () => {
           </select>
           {countryError && <span style={{ color: 'red' }}>{countryError}</span>}
         </div>
-        <div>
-          <label htmlFor="address">Adresa:</label>
+        <div className="address-wrapper">
+          <label htmlFor="address" className="address-label">
+            Adresa:
+          </label>
           <input
             id="address"
             value={address}

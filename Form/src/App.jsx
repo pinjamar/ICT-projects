@@ -13,14 +13,16 @@ function App() {
     <form onSubmit={handleSubmit} className="form">
       <div className="title">
         <h1>
-          Račun --&gt; <span>Plaćanje</span>
+          <span className="invoice-title">Račun --&gt; </span>Plaćanje
         </h1>
       </div>
       <Email />
       <Contact />
       <Payment />
       <Terms />
-      <button type="submit">Naruči</button>
+      <div className="button">
+        <button type="submit">Naruči</button>
+      </div>
     </form>
   );
 }
