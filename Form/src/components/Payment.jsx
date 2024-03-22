@@ -16,30 +16,33 @@ const PaymentForm = () => {
   };
 
   return (
-    <form onSubmit={handlePayment} className="form-element">
-      <div>
-        <input
-          type="radio"
-          id="cash"
-          name="paymentMethod"
-          value="cash"
-          checked={paymentMethod === 'cash'}
-          onChange={handlePaymentChange}
-        />
-        <label htmlFor="cash">Pouzeće</label>
-      </div>
-      <div>
-        <input
-          type="radio"
-          id="card"
-          name="paymentMethod"
-          value="card"
-          checked={paymentMethod === 'card'}
-          onChange={handlePaymentChange}
-        />
-        <label htmlFor="card">Kartica</label>
-      </div>
-    </form>
+    <div className="nacin">
+      <h2>Način plaćanja</h2>
+      <form onSubmit={handlePayment} className="form-element">
+        <div>
+          <input
+            type="radio"
+            id="cash"
+            name="paymentMethod"
+            value="cash"
+            checked={paymentMethod === 'cash'}
+            onChange={handlePaymentChange}
+          />
+          <label htmlFor="cash">Pouzeće</label>
+        </div>
+        <div>
+          <input
+            type="radio"
+            id="card"
+            name="paymentMethod"
+            value="card"
+            checked={paymentMethod === 'card'}
+            onChange={handlePaymentChange}
+          />
+          <label htmlFor="card">Kartica</label>
+        </div>
+      </form>
+    </div>
   );
 };
 

@@ -14,14 +14,16 @@ const Terms = () => {
 
   return (
     <form onSubmit={handleTerms}>
-      <div>
+      <div className="terms-confirmation">
         <input
           type="checkbox"
           id="myCheckbox"
           checked={isChecked}
           onChange={handleCheckboxChange}
         />
-        <label htmlFor="myCheckbox">Prihvaćam uvjete narudžbe</label>
+        <label htmlFor="myCheckbox">
+          <span className="acceptance">Prihvaćam uvjete narudžbe</span>
+        </label>
       </div>
     </form>
   );

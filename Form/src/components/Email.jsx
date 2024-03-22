@@ -10,7 +10,7 @@ const Email = () => {
     setIsValid(validateEmail(value));
   };
 
-  const handleSubmit = (event) => {
+  const handleEmail = (event) => {
     event.preventDefault();
     if (isValid) {
       console.log('Email submitted:', email);
@@ -25,20 +25,22 @@ const Email = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="form-element">
-      <label htmlFor="email">Email:</label>
-      <input
-        type="email"
-        id="email"
-        placeholder="Email adresa..."
-        value={email}
-        onChange={handleEmailChange}
-        style={{ borderColor: isValid ? 'initial' : 'red' }}
-      />
-      {!isValid && (
-        <p style={{ color: 'red' }}>Molimo unesite valjanu email adresu.</p>
-      )}
-    </form>
+    <div>
+      <h2>Kontakt</h2>
+      <form onSubmit={handleEmail} className="form-element">
+        <input
+          type="email"
+          id="email"
+          placeholder="Email adresa..."
+          value={email}
+          onChange={handleEmailChange}
+          style={{ borderColor: isValid ? 'initial' : 'red' }}
+        />
+        {!isValid && (
+          <p style={{ color: 'red' }}>Molimo unesite valjanu email adresu.</p>
+        )}
+      </form>
+    </div>
   );
 };
 

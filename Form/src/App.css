@@ -7,39 +7,29 @@
 
 .form {
   margin: 0;
+  padding: auto;
   place-items: center;
-  background-color: rgba(220, 220, 220, 0.685);
+  background-color: #dedede;
   max-width: 80vw;
   border-radius: 20px;
 }
 
 .form-element {
   border: 3px solid rgb(173, 198, 230);
-  border-radius: 0.8em;
+  border-radius: 0.5em;
   padding: 1em;
   font-weight: bold;
-  margin-top: 2em;
+  margin: 50px 30px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.terms-confirmation {
+  text-align: left;
+  margin-left: 30px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+input[type='checkbox'] {
+  transform: scale(1.5);
 }
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.acceptance {
+  margin-left: 10px;
+  font-size: 1.4rem;
 }

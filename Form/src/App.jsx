@@ -11,7 +11,11 @@ function App() {
 
   return (
     <form onSubmit={handleSubmit} className="form">
-      <h1>Račun --&gt; Plaćanje</h1>
+      <div className="title">
+        <h1>
+          Račun --&gt; <span>Plaćanje</span>
+        </h1>
+      </div>
       <Email />
       <Contact />
       <Payment />
