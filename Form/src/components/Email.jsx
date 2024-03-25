@@ -27,7 +27,7 @@ const Email = () => {
   return (
     <div className="form-element-wrapper">
       <h2 className="email-title">Kontakt</h2>
-      <form onSubmit={handleEmail} className="form-element">
+      <div onSubmit={handleEmail} className="form-element">
         <input
           type="email"
           id="email"
@@ -40,7 +40,7 @@ const Email = () => {
         {!isValid && (
           <p style={{ color: 'red' }}>Molimo unesite valjanu email adresu.</p>
         )}
-      </form>
+      </div>
     </div>
   );
 };

@@ -13,7 +13,7 @@ const Terms = () => {
   };
 
   return (
-    <form onSubmit={handleTerms}>
+    <div onSubmit={handleTerms}>
       <div className="terms-confirmation">
         <input
           type="checkbox"
@@ -25,7 +25,7 @@ const Terms = () => {
           <span className="acceptance">Prihvaćam uvjete narudžbe</span>
         </label>
       </div>
-    </form>
+    </div>
   );
 };
 

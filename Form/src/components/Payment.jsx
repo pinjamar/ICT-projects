@@ -18,7 +18,7 @@ const PaymentForm = () => {
   return (
     <div className="form-element-wrapper">
       <h2 className="payment-title">Način plaćanja:</h2>
-      <form onSubmit={handlePayment} className="form-element payment-element">
+      <div onSubmit={handlePayment} className="form-element payment-element">
         <div>
           <input
             type="radio"
@@ -41,7 +41,7 @@ const PaymentForm = () => {
           />
           <label htmlFor="kartica">Kartica</label>
         </div>
-      </form>
+      </div>
     </div>
   );
 };

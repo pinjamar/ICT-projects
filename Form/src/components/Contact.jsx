@@ -50,7 +50,7 @@ const Contact = () => {
   return (
     <div className="form-element-wrapper">
       <h2 className="address-title">Adresa</h2>
-      <form onSubmit={handleAddress} className="form-element">
+      <div onSubmit={handleAddress} className="form-element">
         <div>
           <label htmlFor="name" className="name-label">
             Ime:
@@ -98,7 +98,7 @@ const Contact = () => {
           />
           {addressError && <span style={{ color: 'red' }}>{addressError}</span>}
         </div>
-      </form>
+      </div>
     </div>
   );
 };
