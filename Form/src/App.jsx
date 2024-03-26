@@ -9,7 +9,7 @@ function App() {
   const [formData, setFormData] = useState({
     email: '',
     address: '',
-    name: '',
+    fullName: '',
     country: '',
     payment: '',
     isChecked: false,
@@ -25,14 +25,6 @@ function App() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    console.log(event.target[0].id);
-    console.log(event.target[1].id);
-    console.log(event.target[2].id);
-    console.log(event.target[3].id);
-    console.log(event.target[4].id);
-    console.log(event.target[5].id);
-    console.log(event.target[6].value);
 
     if (!formData.terms) {
       alert('Molimo vas prihvatite uvjete narudžbe!');
@@ -55,7 +47,13 @@ function App() {
         name="email"
         email={formData.email}
       />
-      <Contact />
+      <Contact
+        name={formData.fullName}
+        country={formData.country}
+        address={formData.address}
+        onChange={handleInputChange}
+        type="text"
+      />
       <Payment payment={formData.payment} onChange={handleInputChange} />
       <Terms isChecked={formData.terms} onChange={handleInputChange} />
       <div className="button">

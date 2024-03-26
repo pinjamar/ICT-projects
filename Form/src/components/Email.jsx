@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-const Email = ({ email: currentMail, onChange }) => {
+const Email = ({ email: currentMail, onChange, name }) => {
   const [email, setEmail] = useState(currentMail);
   const [isValid, setIsValid] = useState(validateEmail(currentMail));
 
@@ -13,7 +13,7 @@ const Email = ({ email: currentMail, onChange }) => {
     setEmail(value);
 
     if (isEmailValid) {
-      onChange({ formName: 'email', formValue: value });
+      onChange({ formName: name, formValue: value });
     }
   };
 
@@ -46,6 +46,7 @@ const Email = ({ email: currentMail, onChange }) => {
 Email.propTypes = {
   email: PropTypes.string,
   onChange: PropTypes.func,
+  name: PropTypes.string,
 };
 
 export default Email;

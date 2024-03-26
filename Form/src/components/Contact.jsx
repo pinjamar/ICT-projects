@@ -1,15 +1,49 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-const Contact = ({ name: currentName, onChange }) => {
+const Contact = ({ fullName: currentName, onChange }) => {
   const [name, setName] = useState(currentName);
-  const [isNameValid, setIsNameValid] = useState(validateName(currentName));
   const [nameError, setNameError] = useState('');
   const [country, setCountry] = useState('');
   const [countryError, setCountryError] = useState('');
   const countries = ['USA', 'Italy', 'Spain', 'Australia', 'Germany'];
   const [address, setAddress] = useState('');
   const [addressError, setAddressError] = useState('');
+
+  const handleNameChange = (event) => {
+    const { value } = event.target;
+    console.log(value);
+    let isNameValid = validateName(value);
+
+    setNameError(isNameValid);
+    setName(value);
+
+    if (isNameValid) {
+      onChange({ formName: 'name', formValue: value });
+    }
+  };
+
+  const handleCountryChange = (event) => {
+    const { value } = event.target;
+    console.log(value);
+    let isCountryValid = validateCountry();
+
+    setCountryError(isCountryValid);
+    setCountry(value);
+
+    if (isCountryValid) {
+      onChange({ formName: 'country', formValue: value });
+    }
+  };
+
+  const handleAddressChange = (event) => {
+    const { value } = event.target;
+    let isAddressValid = validateAddress();
+    setAddress(value);
+    if (isAddressValid) {
+      onChange({ formName: 'address', formValue: value });
+    }
+  };
 
   const validateName = () => {
     if (!name || name.length < 2) {
@@ -31,29 +65,18 @@ const Contact = ({ name: currentName, onChange }) => {
 
   const validateAddress = () => {
     if (!address || address.length < 3) {
-      setAddressError('Molimo unesite adresu!');
+      setAddressError('Molimo unesite ispravnu adresu!');
       return false;
     }
     setAddressError('');
     return true;
   };
 
-  const handleAddress = (event) => {
-    const { value } = event.target;
-    const isNameValid = validateName(value);
-    const isCountryValid = validateCountry();
-    const isAddressValid = validateAddress();
-
-    if (isNameValid) {
-      onChange({ formName: 'name', formValue: value });
-    }
-  };
-
   return (
     <div className="form-element-wrapper">
       <h2 className="address-title">Adresa</h2>
-      <div onSubmit={handleAddress} className="form-element">
-        <div>
+      <div className="form-element">
+        <div className="name-wrapper">
           <label htmlFor="name" className="name-label">
             Ime:
           </label>
@@ -61,11 +84,11 @@ const Contact = ({ name: currentName, onChange }) => {
             type="text"
             id="name"
             value={name}
-            onChange={(e) => setName(e.target.value)}
+            onChange={handleNameChange}
             onBlur={validateName}
             className="text-input"
           />
-          {nameError && <span style={{ color: 'red' }}>{nameError}</span>}
+          {!nameError && <span style={{ color: 'red' }}>{nameError}</span>}
         </div>
         <div className="country-wrapper">
           <label htmlFor="country" className="country-label">
@@ -74,7 +97,7 @@ const Contact = ({ name: currentName, onChange }) => {
           <select
             id="country"
             value={country}
-            onChange={(e) => setCountry(e.target.value)}
+            onChange={handleCountryChange}
             onBlur={validateCountry}
             className="text-input country-select"
           >
@@ -94,7 +117,7 @@ const Contact = ({ name: currentName, onChange }) => {
           <input
             id="address"
             value={address}
-            onChange={(e) => setAddress(e.target.value)}
+            onChange={handleAddressChange}
             onBlur={validateAddress}
             className="text-input"
           />
@@ -105,8 +128,10 @@ const Contact = ({ name: currentName, onChange }) => {
   );
 };
 
-Name.propTypes = {
-  name: PropTypes.string,
+Contact.propTypes = {
+  fullName: PropTypes.string,
+  country: PropTypes.string,
+  address: PropTypes.string,
   onChange: PropTypes.func,
 };
 
