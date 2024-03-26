@@ -1,33 +1,31 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
-const Email = () => {
-  const [email, setEmail] = useState('');
-  const [isValid, setIsValid] = useState(true);
+const Email = ({ email: currentMail, onChange }) => {
+  const [email, setEmail] = useState(currentMail);
+  const [isValid, setIsValid] = useState(validateEmail(currentMail));
 
   const handleEmailChange = (event) => {
     const { value } = event.target;
-    setEmail(value);
-    setIsValid(validateEmail(value));
-  };
+    let isEmailValid = validateEmail(value);
 
-  const handleEmail = (event) => {
-    event.preventDefault();
-    if (isValid) {
-      console.log('Email unesen:', email);
-    } else {
-      console.log('Neispravan email:', email);
+    setIsValid(isEmailValid);
+    setEmail(value);
+
+    if (isEmailValid) {
+      onChange({ formName: 'email', formValue: value });
     }
   };
 
-  const validateEmail = (email) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  function validateEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+.[^\s@]+$/;
     return emailRegex.test(email);
-  };
+  }
 
   return (
     <div className="form-element-wrapper">
       <h2 className="email-title">Kontakt</h2>
-      <div onSubmit={handleEmail} className="form-element">
+      <div className="form-element">
         <input
           type="email"
           id="email"
@@ -43,6 +41,11 @@ const Email = () => {
       </div>
     </div>
   );
+};
+
+Email.propTypes = {
+  email: PropTypes.string,
+  onChange: PropTypes.func,
 };
 
 export default Email;

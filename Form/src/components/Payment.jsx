@@ -1,10 +1,12 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
-const PaymentForm = () => {
-  const [paymentMethod, setPaymentMethod] = useState('gotovina');
+const Payment = ({ payment, onChange }) => {
+  const [paymentMethod, setPaymentMethod] = useState(payment);
 
   const handlePaymentChange = (event) => {
     setPaymentMethod(event.target.value);
+    onChange({ formName: 'payment', formValue: event.target.value });
   };
 
   const handlePayment = () => {
@@ -46,4 +48,9 @@ const PaymentForm = () => {
   );
 };
 
-export default PaymentForm;
+Payment.propTypes = {
+  payment: PropTypes.string,
+  onChange: PropTypes.func,
+};
+
+export default Payment;

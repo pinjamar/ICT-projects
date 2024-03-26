@@ -1,13 +1,15 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
-const Contact = () => {
-  const [name, setName] = useState('');
-  const [country, setCountry] = useState('');
-  const [address, setAddress] = useState('');
+const Contact = ({ name: currentName, onChange }) => {
+  const [name, setName] = useState(currentName);
+  const [isNameValid, setIsNameValid] = useState(validateName(currentName));
   const [nameError, setNameError] = useState('');
+  const [country, setCountry] = useState('');
   const [countryError, setCountryError] = useState('');
-  const [addressError, setAddressError] = useState('');
   const countries = ['USA', 'Italy', 'Spain', 'Australia', 'Germany'];
+  const [address, setAddress] = useState('');
+  const [addressError, setAddressError] = useState('');
 
   const validateName = () => {
     if (!name || name.length < 2) {
@@ -37,13 +39,13 @@ const Contact = () => {
   };
 
   const handleAddress = (event) => {
-    event.preventDefault();
-    const isNameValid = validateName();
+    const { value } = event.target;
+    const isNameValid = validateName(value);
     const isCountryValid = validateCountry();
     const isAddressValid = validateAddress();
 
-    if (isNameValid && isCountryValid && isAddressValid) {
-      console.log('Adresa unesena:', { name, country, address });
+    if (isNameValid) {
+      onChange({ formName: 'name', formValue: value });
     }
   };
 
@@ -101,6 +103,11 @@ const Contact = () => {
       </div>
     </div>
   );
+};
+
+Name.propTypes = {
+  name: PropTypes.string,
+  onChange: PropTypes.func,
 };
 
 export default Contact;

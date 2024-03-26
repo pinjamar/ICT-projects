@@ -7,42 +7,40 @@ import Terms from './components/Terms';
 
 function App() {
   const [formData, setFormData] = useState({
-    email: <Email />,
+    email: '',
     address: '',
     name: '',
     country: '',
     payment: '',
-    terms: '',
+    isChecked: false,
   });
 
-  const handleInputChange = (event) => {
-    const { name, email, value } = event.target;
+  const handleInputChange = (newFormData) => {
+    const { formName, formValue } = newFormData;
     setFormData({
       ...formData,
-      [name]: value,
-      [email]: value,
+      [formName]: formValue,
     });
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // if (!formData.terms) {
-    //   alert('Molimo vas prihvatite uvjete narudžbe!');
-    //   return;
-    // }
+    console.log(event.target[0].id);
+    console.log(event.target[1].id);
+    console.log(event.target[2].id);
+    console.log(event.target[3].id);
+    console.log(event.target[4].id);
+    console.log(event.target[5].id);
+    console.log(event.target[6].value);
+
+    if (!formData.terms) {
+      alert('Molimo vas prihvatite uvjete narudžbe!');
+      return;
+    }
 
     const formDataString = `Forma uspješno podnesena s ovim podacima:\nEmail: ${formData.email}\nIme: ${formData.name}\nDržava: ${formData.country}\nAdresa: ${formData.address}\nPlacanje: ${formData.payment}\n`;
     alert(formDataString);
-
-    setFormData({
-      email: '',
-      address: '',
-      name: '',
-      country: '',
-      payment: '',
-      terms: '',
-    });
   };
   return (
     <form onSubmit={handleSubmit} className="form">
@@ -55,11 +53,11 @@ function App() {
         type="text"
         onChange={handleInputChange}
         name="email"
-        value={formData.email}
+        email={formData.email}
       />
       <Contact />
-      <Payment />
-      <Terms />
+      <Payment payment={formData.payment} onChange={handleInputChange} />
+      <Terms isChecked={formData.terms} onChange={handleInputChange} />
       <div className="button">
         <button type="submit">Naruči</button>
       </div>
