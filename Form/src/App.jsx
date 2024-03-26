@@ -6,33 +6,42 @@ import Payment from './components/Payment';
 import Terms from './components/Terms';
 
 function App() {
-  // Step 1: Initialize state
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
+    email: <Email />,
+    address: '',
+    name: '',
+    country: '',
+    payment: '',
+    terms: '',
   });
 
-  // Step 2: Handle form inputs
   const handleInputChange = (event) => {
-    const { name, value } = event.target;
+    const { name, email, value } = event.target;
     setFormData({
       ...formData,
       [name]: value,
+      [email]: value,
     });
   };
 
-  // Step 3: Handle form submission
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Handle form submission logic here
-    console.log('Form submitted with data:', formData);
-    // You might want to send the form data to an API or perform other actions here
-    // After submission, you can reset the form if needed
+
+    // if (!formData.terms) {
+    //   alert('Molimo vas prihvatite uvjete narudžbe!');
+    //   return;
+    // }
+
+    const formDataString = `Forma uspješno podnesena s ovim podacima:\nEmail: ${formData.email}\nIme: ${formData.name}\nDržava: ${formData.country}\nAdresa: ${formData.address}\nPlacanje: ${formData.payment}\n`;
+    alert(formDataString);
+
     setFormData({
-      firstName: '',
-      lastName: '',
       email: '',
+      address: '',
+      name: '',
+      country: '',
+      payment: '',
+      terms: '',
     });
   };
   return (
@@ -42,7 +51,12 @@ function App() {
           <span className="invoice-title">Račun --&gt; </span>Plaćanje
         </h1>
       </div>
-      <Email onChange={handleInputChange} />
+      <Email
+        type="text"
+        onChange={handleInputChange}
+        name="email"
+        value={formData.email}
+      />
       <Contact />
       <Payment />
       <Terms />

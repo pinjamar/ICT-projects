@@ -10,7 +10,7 @@ const Contact = () => {
   const countries = ['USA', 'Italy', 'Spain', 'Australia', 'Germany'];
 
   const validateName = () => {
-    if (!name) {
+    if (!name || name.length < 2) {
       setNameError('Molimo unesite ime!');
       return false;
     }
@@ -28,7 +28,7 @@ const Contact = () => {
   };
 
   const validateAddress = () => {
-    if (!address) {
+    if (!address || address.length < 3) {
       setAddressError('Molimo unesite adresu!');
       return false;
     }
