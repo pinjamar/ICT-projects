@@ -1,3 +1,5 @@
+This is "Ivan Pirija CV" practice project as a part of ICT Junior React Dev Academy
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

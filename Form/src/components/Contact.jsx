@@ -1,21 +1,39 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
+const validateName = (name) => {
+  return name && name.length >= 2;
+};
+
+const validateCountry = (country) => {
+  return !!country;
+};
+
+const validateAddress = (address) => {
+  return address && address.length >= 3;
+};
+
 const Contact = ({ fullName: currentName, onChange }) => {
   const [name, setName] = useState(currentName);
   const [nameError, setNameError] = useState('');
-  const [country, setCountry] = useState('');
+  const [country, setCountry] = useState('Hrvatska');
   const [countryError, setCountryError] = useState('');
-  const countries = ['USA', 'Italy', 'Spain', 'Australia', 'Germany'];
+  const countries = [
+    'Hrvatska',
+    'USA',
+    'Italy',
+    'Spain',
+    'Australia',
+    'Germany',
+  ];
   const [address, setAddress] = useState('');
   const [addressError, setAddressError] = useState('');
 
   const handleNameChange = (event) => {
     const { value } = event.target;
-    console.log(value);
     let isNameValid = validateName(value);
 
-    setNameError(isNameValid);
+    setNameError(isNameValid ? '' : 'Molimo unesite ime!');
     setName(value);
 
     if (isNameValid) {
@@ -25,10 +43,9 @@ const Contact = ({ fullName: currentName, onChange }) => {
 
   const handleCountryChange = (event) => {
     const { value } = event.target;
-    console.log(value);
-    let isCountryValid = validateCountry();
+    let isCountryValid = validateCountry(value);
 
-    setCountryError(isCountryValid);
+    setCountryError(isCountryValid ? '' : 'Molimo odaberite zemlju!');
     setCountry(value);
 
     if (isCountryValid) {
@@ -38,38 +55,14 @@ const Contact = ({ fullName: currentName, onChange }) => {
 
   const handleAddressChange = (event) => {
     const { value } = event.target;
-    let isAddressValid = validateAddress();
+    let isAddressValid = validateAddress(value);
+
+    setAddressError(isAddressValid ? '' : 'Molimo unesite ispravnu adresu!');
     setAddress(value);
+
     if (isAddressValid) {
       onChange({ formName: 'address', formValue: value });
     }
-  };
-
-  const validateName = () => {
-    if (!name || name.length < 2) {
-      setNameError('Molimo unesite ime!');
-      return false;
-    }
-    setNameError('');
-    return true;
-  };
-
-  const validateCountry = () => {
-    if (!country) {
-      setCountryError('Molimo odaberite zemlju!');
-      return false;
-    }
-    setCountryError('');
-    return true;
-  };
-
-  const validateAddress = () => {
-    if (!address || address.length < 3) {
-      setAddressError('Molimo unesite ispravnu adresu!');
-      return false;
-    }
-    setAddressError('');
-    return true;
   };
 
   return (
@@ -101,7 +94,6 @@ const Contact = ({ fullName: currentName, onChange }) => {
             onBlur={validateCountry}
             className="text-input country-select"
           >
-            <option value="">Hrvatska</option>
             {countries.map((c) => (
               <option key={c} value={c}>
                 {c}

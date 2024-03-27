@@ -9,14 +9,17 @@ function App() {
   const [formData, setFormData] = useState({
     email: '',
     address: '',
-    fullName: '',
-    country: '',
+    name: '',
+    country: 'Hrvatska',
     payment: '',
     isChecked: false,
   });
 
   const handleInputChange = (newFormData) => {
     const { formName, formValue } = newFormData;
+
+    console.log(newFormData);
+
     setFormData({
       ...formData,
       [formName]: formValue,
