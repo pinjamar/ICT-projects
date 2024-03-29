@@ -1,0 +1,3 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+export const shuffleArray = (array: any[]) =>
+  [...array].sort(() => Math.random() - 0.5);

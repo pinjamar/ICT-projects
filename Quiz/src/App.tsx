@@ -1,4 +1,5 @@
-import { useState } from 'react';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import React, { useState } from 'react';
 import { fetchQuizQuestions } from './API';
 // Components
 import QuestionCard from './components/QuestionCard';
@@ -7,20 +8,20 @@ import { QuestionsState, Difficulty } from './API';
 // Styles
 import { GlobalStyle, Wrapper } from './App.styles';
 
-const AnswerObject = {
-  question: '',
-  answer: '',
-  correct: true,
-  correctAnswer: '',
+export type AnswerObject = {
+  question: string;
+  answer: string;
+  correct: boolean;
+  correctAnswer: string;
 };
 
 const TOTAL_QUESTIONS = 10;
 
-const App = () => {
+const App: React.FC = () => {
   const [loading, setLoading] = useState(false);
-  const [questions, setQuestions] = useState < QuestionsState > [];
+  const [questions, setQuestions] = useState<QuestionsState[]>([]);
   const [number, setNumber] = useState(0);
-  const [userAnswers, setUserAnswers] = useState < AnswerObject > [];
+  const [userAnswers, setUserAnswers] = useState<AnswerObject[]>([]);
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(true);
 
@@ -38,7 +39,7 @@ const App = () => {
     setLoading(false);
   };
 
-  const checkAnswer = (e) => {
+  const checkAnswer = (e: any) => {
     if (!gameOver) {
       // User's answer
       const answer = e.currentTarget.value;

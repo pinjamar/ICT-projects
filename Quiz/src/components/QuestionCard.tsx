@@ -4,16 +4,16 @@ import { AnswerObject } from '../App';
 // Styles
 import { Wrapper, ButtonWrapper } from './QuestionCard.styles';
 
-const Props = {
-  question: '',
-  answers: [],
-  // callback: (e: React.MouseEvent<HTMLButtonElement>) => void,
-  userAnswer: AnswerObject | undefined,
-  questionNr: Number,
-  totalQuestions: Number,
+type Props = {
+  question: string;
+  answers: string[];
+  callback: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  userAnswer: AnswerObject | undefined;
+  questionNr: number;
+  totalQuestions: number;
 };
 
-const QuestionCard = ({
+const QuestionCard: React.FC<Props> = ({
   question,
   answers,
   callback,
