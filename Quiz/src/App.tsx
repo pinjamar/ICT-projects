@@ -31,6 +31,7 @@ const App: React.FC = () => {
     const newQuestions = await fetchQuizQuestions(
       TOTAL_QUESTIONS,
       Difficulty.EASY
+      // Category.1
     );
     setQuestions(newQuestions);
     setScore(0);
@@ -61,7 +62,6 @@ const App: React.FC = () => {
   const nextQuestion = () => {
     // Move on to the next question if not the last question
     const nextQ = number + 1;
-
     if (nextQ === TOTAL_QUESTIONS) {
       setGameOver(true);
     } else {
@@ -69,18 +69,26 @@ const App: React.FC = () => {
     }
   };
 
+  const playAgain = async () => {
+    setLoading(true);
+    setGameOver(false);
+    const newQuestions = await fetchQuizQuestions(
+      TOTAL_QUESTIONS,
+      Difficulty.EASY
+      // Category.1
+    );
+    setQuestions(newQuestions);
+    setScore(0);
+    setUserAnswers([]);
+    setNumber(0);
+    setLoading(false);
+  };
+
   return (
     <>
       <GlobalStyle />
       <Wrapper>
-        <h1>REACT QUIZ</h1>
-        {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
-          <button className="start" onClick={startTrivia}>
-            Start
-          </button>
-        ) : null}
-        {!gameOver ? <p className="score">Score: {score}</p> : null}
-        {loading ? <p>Loading Questions...</p> : null}
+        {loading ? <p>Loading...</p> : null}
         {!loading && !gameOver && (
           <QuestionCard
             questionNr={number + 1}
@@ -96,7 +104,19 @@ const App: React.FC = () => {
         userAnswers.length === number + 1 &&
         number !== TOTAL_QUESTIONS - 1 ? (
           <button className="next" onClick={nextQuestion}>
-            Next Question
+            Iduce pitanje
+          </button>
+        ) : null}
+
+        {gameOver ? (
+          <button className="start" onClick={startTrivia}>
+            Start
+          </button>
+        ) : null}
+        {!gameOver ? <p className="score">Rezultat: {score}</p> : null}
+        {userAnswers.length === TOTAL_QUESTIONS ? (
+          <button className="start" onClick={playAgain}>
+            Zelite igrati ponovno?
           </button>
         ) : null}
       </Wrapper>

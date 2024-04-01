@@ -23,20 +23,16 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  > p {
-    color: #fff;
-  }
+  margin-top: 20%;
 
   .score {
-    color: #fff;
+    color: gray;
     font-size: 2rem;
-    margin: 0;
+    margin-top: 20px;
   }
 
   h1 {
     font-family: Fascinate Inline;
-    background-image: linear-gradient(180deg, #fff, #87f1ff);
     font-weight: 400;
     background-size: 100%;
     background-clip: text;
