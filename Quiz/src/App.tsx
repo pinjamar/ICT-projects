@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { fetchQuizQuestions } from './API';
 import QuestionCard from './components/QuestionCard';
-import { QuestionsState, Difficulty } from './API';
+import { QuestionsState, Difficulty, Category } from './API';
 import { GlobalStyle, Wrapper } from './App.styles';
 
 export type AnswerObject = {
@@ -22,13 +22,17 @@ const App: React.FC = () => {
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(true);
 
+  const [questionCount, setQuestionCount] = useState(TOTAL_QUESTIONS);
+  const [diff, setDiff] = useState(Difficulty.EASY);
+  const [category, setCategory] = useState(Category.GeneralKnowledge);
+
   const startTrivia = async () => {
     setLoading(true);
     setGameOver(false);
     const newQuestions = await fetchQuizQuestions(
-      TOTAL_QUESTIONS,
-      Difficulty.EASY
-      // Category.1
+      questionCount,
+      diff,
+      category
     );
     setQuestions(newQuestions);
     setScore(0);
@@ -54,7 +58,7 @@ const App: React.FC = () => {
 
   const nextQuestion = () => {
     const nextQ = number + 1;
-    if (nextQ === TOTAL_QUESTIONS) {
+    if (nextQ === questionCount) {
       setGameOver(true);
     } else {
       setNumber(nextQ);
@@ -66,8 +70,8 @@ const App: React.FC = () => {
     setGameOver(false);
     const newQuestions = await fetchQuizQuestions(
       TOTAL_QUESTIONS,
-      Difficulty.EASY
-      // Category.1
+      Difficulty.EASY,
+      Category.GeneralKnowledge
     );
     setQuestions(newQuestions);
     setScore(0);
@@ -84,7 +88,7 @@ const App: React.FC = () => {
         {!loading && !gameOver && (
           <QuestionCard
             questionNr={number + 1}
-            totalQuestions={TOTAL_QUESTIONS}
+            totalQuestions={questionCount}
             question={questions[number].question}
             answers={questions[number].answers}
             userAnswer={userAnswers ? userAnswers[number] : undefined}
@@ -94,21 +98,61 @@ const App: React.FC = () => {
         {!gameOver &&
         !loading &&
         userAnswers.length === number + 1 &&
-        number !== TOTAL_QUESTIONS - 1 ? (
+        number !== questionCount - 1 ? (
           <button className="next" onClick={nextQuestion}>
             Iduce pitanje
           </button>
         ) : null}
 
         {gameOver ? (
-          <button className="start" onClick={startTrivia}>
-            START
-          </button>
+          <>
+            <label htmlFor="diff" className="difficulty">
+              Tezina:
+            </label>
+            <select
+              name="diff"
+              value={diff}
+              onChange={(e) => setDiff(e.target.value)}
+            >
+              <option value={Difficulty.EASY}>Easy</option>
+              <option value={Difficulty.MEDIUM}>Meeeeedium</option>
+              <option value={Difficulty.HARD}>Whoop-Ass!</option>
+            </select>
+            <label htmlFor="cat" className="category">
+              Kategorija:
+            </label>
+            <select
+              name="category"
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+            >
+              <option value={Category.GeneralKnowledge}>
+                General Knowledge
+              </option>
+              <option value={Category.ScienceNature}>Science & Nature</option>
+              <option value={Category.Mythology}>Mythology</option>
+              <option value={Category.Sports}>Sports</option>
+              <option value={Category.Geography}>Geography</option>
+              <option value={Category.History}>History</option>
+            </select>
+            <label htmlFor="questionCount" className="number">
+              Broj pitanja
+            </label>
+            <input
+              name="questionCount"
+              type="number"
+              value={questionCount}
+              onChange={(evt) => setQuestionCount(parseInt(evt.target.value))}
+            ></input>
+            <button className="start" onClick={startTrivia}>
+              START
+            </button>
+          </>
         ) : null}
         {!gameOver ? <p className="score">Rezultat: {score}</p> : null}
-        {userAnswers.length === TOTAL_QUESTIONS ? (
+        {userAnswers.length === questionCount ? (
           <button className="start" onClick={playAgain}>
-            Zelite igrati ponovno?
+            Zelim igrati ponovno!
           </button>
         ) : null}
       </Wrapper>

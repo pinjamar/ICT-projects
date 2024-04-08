@@ -15,20 +15,23 @@ export enum Difficulty {
   HARD = 'hard',
 }
 
-// export enum Category {
-//   GeneralKnowledge = 1,
-//   Books = 2,
-//   Films = 3,
-// }
+export enum Category {
+  GeneralKnowledge = 9,
+  ScienceNature = 17,
+  Mythology = 20,
+  Sports = 21,
+  Geography = 22,
+  History = 23,
+}
 
 export type QuestionsState = Question & { answers: string[] };
 
 export const fetchQuizQuestions = async (
   amount: number,
-  difficulty: Difficulty
-  // category: Category
+  difficulty: Difficulty,
+  category: Category
 ): Promise<QuestionsState[]> => {
-  const endpoint = `https://opentdb.com/api.php?amount=${amount}&difficulty=${difficulty}&type=multiple`;
+  const endpoint = `https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}&type=multiple`;
   const data = await (await fetch(endpoint)).json();
   return data.results.map((question: Question) => ({
     ...question,
