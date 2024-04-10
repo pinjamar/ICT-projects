@@ -1,38 +1,36 @@
 {
-  "jakna": {
-    "mozda": "on",
-    "boja": "plava",
-    "velicina": "M",
-    "marka": "nzn"
-  },
-  "majica": {
-    "mozda": "on",
-    "boja": "plava",
-    "velicina": "M",
-    "marka": "nzn"
-  },
-  "hlace": {
-    "mozda": "on",
-    "boja": "plava",
-    "velicina": "M",
-    "marka": "nzn"
-  },
-  "hlace": {
-    "mozda": "on",
-    "boja": "plava",
-    "velicina": "M",
-    "marka": "nzn"
-  },
-  "jakna": {
-    "mozda": "on",
-    "boja": "plava",
-    "velicina": "M",
-    "marka": "nzn"
-  },
-  "majica": {
-    "mozda": "on",
-    "boja": "plava",
-    "velicina": "M",
-    "marka": "nzn"
-  }
+  "odjeca": [
+    {
+      "vrsta": "Majica",
+      "velicina": "M",
+      "boja": "plava",
+      "marka": "Adidas",
+      "slika": "slika",
+      "opcije": ["-✎", "-❌"]
+    },
+    {
+      "vrsta": "Suknja",
+      "velicina": "L",
+      "boja": "plava",
+      "marka": "Zara",
+      "slika": "slika",
+      "opcije": ["-✎", "-❌"]
+    },
+    {
+      "vrsta": "Jakna",
+      "velicina": "XL",
+      "boja": "crvena",
+      "marka": "Diesel",
+      "slika": "slika",
+      "opcije": ["-✎", "-❌"]
+    },
+    {
+      "vrsta": "Majica",
+      "velicina": "L",
+      "boja": "zelena",
+      "marka": "Diesel",
+      "slika": "slika",
+      "opcije": ["-✎", "-❌"]
+    }
+  ]
 }

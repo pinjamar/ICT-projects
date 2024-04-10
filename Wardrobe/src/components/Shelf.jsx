@@ -2,8 +2,12 @@
 function Shelf({ rez }) {
   return (
     <tr>
-      <td>{rez.jakna.boja}</td>
-      <td>{rez.majica.velicina}</td>
+      <td>{rez.vrsta}</td>
+      <td>{rez.velicina}</td>
+      <td>{rez.marka}</td>
+      <td>{rez.boja}</td>
+      <td>{rez.slika}</td>
+      <td>{rez.opcije}</td>
     </tr>
   );
 }

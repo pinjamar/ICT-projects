@@ -1,16 +1,18 @@
 /* eslint-disable react/prop-types */
 import Shelf from './Shelf';
+import ClothesFilter from './ClothesFilter';
 
 function Wardrobe({ odjeca }) {
   return (
-    <>
-      <h1>Popis</h1>
+    <div>
+      <ClothesFilter />
+      <h2 className="wardrobe-title">Popis</h2>
       <table>
         <thead>
           <tr>
-            <th>ID</th>
             <th>Vrsta</th>
             <th>Veličina</th>
+            <th>Marka</th>
             <th>Boja</th>
             <th>Slika</th>
             <th>Opcije</th>
@@ -22,7 +24,7 @@ function Wardrobe({ odjeca }) {
           ))}
         </tbody>
       </table>
-    </>
+    </div>
   );
 }
 
