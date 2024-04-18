@@ -1,4 +1,4 @@
-// import Heading from '../../common/heading/Heading';
+import Heading from '../../common/heading/Heading';
 import './hero.css';
 
 const Hero = () => {
@@ -7,10 +7,10 @@ const Hero = () => {
       <section className="hero">
         <div className="container">
           <div className="row">
-            {/* <Heading
+            <Heading
               subtitle="WELCOME TO ACADEMIA"
               title="Best Online Education Expertise"
-            /> */}
+            />
             <p>
               Far far away, behind the word mountains, far from the countries
               Vokalia and Consonantia, there live the blind texts.
