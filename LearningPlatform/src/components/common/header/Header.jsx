@@ -16,25 +16,16 @@ const Header = () => {
             onClick={() => setClick(false)}
           >
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/">Naslovna</Link>
             </li>
             <li>
-              <Link to="/radionice">All Courses</Link>
+              <Link to="/radionice">Radionice</Link>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <Link to="/predavaci">Predavaci</Link>
             </li>
             <li>
-              <Link to="/predavaci">Team</Link>
-            </li>
-            <li>
-              <Link to="/pricing">Pricing</Link>
-            </li>
-            <li>
-              <Link to="/journal">Journal</Link>
-            </li>
-            <li>
-              <Link to="/contact">Contact</Link>
+              <Link to="/admin">Administracija</Link>
             </li>
           </ul>
           <div className="start">

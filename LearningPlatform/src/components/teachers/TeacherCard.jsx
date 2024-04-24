@@ -18,7 +18,7 @@ const TeacherCard = () => {
           <div className="details">
             <h2>{val.ime}</h2>
             <p>{val.biografija}</p>
-            <p>{val.organizacija}</p>
+            <h5>Organizacija: {val.organizacija}</h5>
           </div>
         </div>
       ))}

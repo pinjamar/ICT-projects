@@ -1,17 +1,19 @@
-import Back from '../common/back/Back';
 import TeacherCard from './TeacherCard';
+import ThemeFilter from '../common/filters/ThemeFilter';
+import OrganizationFilter from '../common/filters/OrganizationFilter';
 import './teachers.css';
 
 const Team = () => {
   return (
-    <>
-      <Back title="Team" />
-      <section className="team padding">
-        <div className="container grid">
-          <TeacherCard />
-        </div>
-      </section>
-    </>
+    <section className="team padding">
+      <div>
+        <ThemeFilter />
+        <OrganizationFilter />
+      </div>
+      <div className="container grid">
+        <TeacherCard />
+      </div>
+    </section>
   );
 };
 

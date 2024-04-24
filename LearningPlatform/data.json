@@ -12,36 +12,48 @@
   "predavaci": [
     {
       "id": "predavac_1",
-      "ime": "Predavac 1",
+      "ime": "Dr. Robert Lee",
       "cover": "./public/images/teachers/einstein.jpg",
-      "biografija": "Biografija predavaca 1",
-      "organizacija": "organizacija_1"
+      "biografija": "An accomplished physics educator with a Ph.D. from MIT. With a decade of teaching experience, Dr. Lee is renowned for her ability to make complex physics concepts relatable and engaging for students. Through her innovative teaching methods and unwavering dedication, he inspires a new generation of aspiring scientists to explore the wonders of the universe.",
+      "organizacija": "Institut Max Planck"
     },
     {
       "id": "predavac_2",
-      "ime": "Predavac 2",
+      "ime": "Luna Blackwood",
       "cover": "./public/images/teachers/granger.jpg",
-      "biografija": "Biografija predavaca 2",
-      "organizacija": "organizacija_2"
+      "biografija": "A magic instructor with years of experience in the mystical arts. With a background in ancient arcane studies and modern spellcraft, Professor Blackwood brings a unique blend of tradition and innovation to her teaching. Through her enchanting lessons and interactive demonstrations, she inspires her students to unlock the secrets of magic and embark on their own magical journeys.",
+      "organizacija": "Akademija Hogwarts"
     },
     {
       "id": "predavac_3",
-      "ime": "Predavac 3",
+      "ime": "David Martinez",
       "cover": "./public/images/teachers/strojar.jpg",
-      "biografija": "Biografija predavaca 3",
-      "organizacija": "organizacija_3"
+      "biografija": "A seasoned engineering educator with a Master's degree in Mechanical Engineering from Stanford University. With a decade of teaching experience, Professor Martinez is known for his dynamic approach to teaching, integrating real-world applications and hands-on projects into his curriculum. He is dedicated to empowering his students with the skills and knowledge they need to excel in the field of engineering.",
+      "organizacija": "Fakultet Jure Radic"
     },
     {
       "id": "predavac_4",
-      "ime": "Predavac 4",
+      "ime": "Sara Chronos",
       "cover": "./public/images/teachers/plava.jpg",
-      "biografija": "Biografija predavaca 4",
-      "organizacija": "organizacija_4"
+      "biografija": "Step into the classroom of Professor Chronos, a time-traveling educator with a Ph.D. in Temporal Mechanics. With millennia of teaching experience spanning across epochs, Professor Chronos seamlessly intertwines history and future studies in his lessons. Through her innovative approach, she guides students on a mind-bending journey through time, inspiring them to explore the past, present, and future.",
+      "organizacija": "Studio Hollywood"
     }
   ],
   "organizacije": [
     {
       "id": "organizacija_1",
+      "ime": "Akademija Hogwarts",
+      "opis": "Opis organizacije 1",
+      "radionice": ["radionica_1"]
+    },
+    {
+      "id": "organizacija_2",
+      "ime": "Organizacija 1",
+      "opis": "Opis organizacije 1",
+      "radionice": ["radionica_1"]
+    },
+    {
+      "id": "organizacija_3",
       "ime": "Organizacija 1",
       "opis": "Opis organizacije 1",
       "radionice": ["radionica_1"]
@@ -63,16 +75,16 @@
   ],
   "teme": [
     {
-      "id": "react",
-      "ime": "React"
+      "id": "programming",
+      "ime": "Programming"
     },
     {
-      "id": "express",
-      "ime": "Express"
+      "id": "magic",
+      "ime": "Magic"
     },
     {
-      "id": "next_js",
-      "ime": "Next.js"
+      "id": "science",
+      "ime": "Science"
     }
   ]
 }
