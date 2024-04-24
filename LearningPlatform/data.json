@@ -13,8 +13,30 @@
     {
       "id": "predavac_1",
       "ime": "Predavac 1",
+      "cover": "./public/images/teachers/einstein.jpg",
       "biografija": "Biografija predavaca 1",
       "organizacija": "organizacija_1"
+    },
+    {
+      "id": "predavac_2",
+      "ime": "Predavac 2",
+      "cover": "./public/images/teachers/granger.jpg",
+      "biografija": "Biografija predavaca 2",
+      "organizacija": "organizacija_2"
+    },
+    {
+      "id": "predavac_3",
+      "ime": "Predavac 3",
+      "cover": "./public/images/teachers/strojar.jpg",
+      "biografija": "Biografija predavaca 3",
+      "organizacija": "organizacija_3"
+    },
+    {
+      "id": "predavac_4",
+      "ime": "Predavac 4",
+      "cover": "./public/images/teachers/plava.jpg",
+      "biografija": "Biografija predavaca 4",
+      "organizacija": "organizacija_4"
     }
   ],
   "organizacije": [

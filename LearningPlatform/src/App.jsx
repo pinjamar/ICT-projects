@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Header from './components/common/Header';
+import Header from './components/common/header/Header';
 import Home from './components/home/Home';
 import Courses from './components/courses/Courses';
 import Teachers from './components/teachers/Teachers';
