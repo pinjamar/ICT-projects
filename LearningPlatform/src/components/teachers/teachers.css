@@ -1,3 +1,7 @@
+.teachers-page {
+  display: flex;
+}
+
 .team .items {
   transition: 0.5s;
 }
@@ -53,4 +57,11 @@
 .team .items:hover .overlay i:hover {
   background-color: #1eb2a6;
   color: #fff;
+}
+
+/* FILTERS */
+.filters {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }

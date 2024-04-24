@@ -6,12 +6,15 @@ import './teachers.css';
 const Team = () => {
   return (
     <section className="team padding">
-      <div>
-        <ThemeFilter />
-        <OrganizationFilter />
-      </div>
-      <div className="container grid">
-        <TeacherCard />
+      <button>+ Dodaj novog predavaca</button>
+      <div className="teachers-page">
+        <div className="filters">
+          <ThemeFilter />
+          <OrganizationFilter />
+        </div>
+        <div className="container grid">
+          <TeacherCard />
+        </div>
       </div>
     </section>
   );

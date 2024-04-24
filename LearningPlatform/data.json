@@ -7,6 +7,46 @@
       "predavac": "predavac_1",
       "opis": "Kratki opis radionice 1",
       "broj_prijava": 0
+    },
+    {
+      "id": "radionica_2",
+      "ime": "Radionica 1",
+      "datum": "01.01.2025",
+      "predavac": "predavac_1",
+      "opis": "Kratki opis radionice 1",
+      "broj_prijava": 0
+    },
+    {
+      "id": "radionica_3",
+      "ime": "Radionica 1",
+      "datum": "01.01.2025",
+      "predavac": "predavac_1",
+      "opis": "Kratki opis radionice 1",
+      "broj_prijava": 0
+    },
+    {
+      "id": "radionica_3",
+      "ime": "Radionica 1",
+      "datum": "01.01.2025",
+      "predavac": "predavac_1",
+      "opis": "Kratki opis radionice 1",
+      "broj_prijava": 0
+    },
+    {
+      "id": "radionica_3",
+      "ime": "Radionica 1",
+      "datum": "01.01.2025",
+      "predavac": "predavac_1",
+      "opis": "Kratki opis radionice 1",
+      "broj_prijava": 0
+    },
+    {
+      "id": "radionica_3",
+      "ime": "Radionica 1",
+      "datum": "01.01.2025",
+      "predavac": "predavac_1",
+      "opis": "Kratki opis radionice 1",
+      "broj_prijava": 0
     }
   ],
   "predavaci": [
@@ -36,7 +76,21 @@
       "ime": "Sara Chronos",
       "cover": "./public/images/teachers/plava.jpg",
       "biografija": "Step into the classroom of Professor Chronos, a time-traveling educator with a Ph.D. in Temporal Mechanics. With millennia of teaching experience spanning across epochs, Professor Chronos seamlessly intertwines history and future studies in his lessons. Through her innovative approach, she guides students on a mind-bending journey through time, inspiring them to explore the past, present, and future.",
-      "organizacija": "Studio Hollywood"
+      "organizacija": "Akademija Hogwarts"
+    },
+    {
+      "id": "predavac_3",
+      "ime": "David Martinez",
+      "cover": "./public/images/teachers/strojar.jpg",
+      "biografija": "A seasoned engineering educator with a Master's degree in Mechanical Engineering from Stanford University. With a decade of teaching experience, Professor Martinez is known for his dynamic approach to teaching, integrating real-world applications and hands-on projects into his curriculum. He is dedicated to empowering his students with the skills and knowledge they need to excel in the field of engineering.",
+      "organizacija": "Fakultet Jure Radic"
+    },
+    {
+      "id": "predavac_3",
+      "ime": "David Martinez",
+      "cover": "./public/images/teachers/strojar.jpg",
+      "biografija": "A seasoned engineering educator with a Master's degree in Mechanical Engineering from Stanford University. With a decade of teaching experience, Professor Martinez is known for his dynamic approach to teaching, integrating real-world applications and hands-on projects into his curriculum. He is dedicated to empowering his students with the skills and knowledge they need to excel in the field of engineering.",
+      "organizacija": "Fakultet Jure Radic"
     }
   ],
   "organizacije": [
@@ -48,7 +102,7 @@
     },
     {
       "id": "organizacija_2",
-      "ime": "Organizacija 1",
+      "ime": "Institut Max Planck",
       "opis": "Opis organizacije 1",
       "radionice": ["radionica_1"]
     },
@@ -76,15 +130,15 @@
   "teme": [
     {
       "id": "programming",
-      "ime": "Programming"
+      "ime": "Programiranje"
     },
     {
       "id": "magic",
-      "ime": "Magic"
+      "ime": "Magija"
     },
     {
       "id": "science",
-      "ime": "Science"
+      "ime": "Znanost"
     }
   ]
 }

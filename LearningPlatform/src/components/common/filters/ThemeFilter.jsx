@@ -1,12 +1,15 @@
+/* eslint-disable react/jsx-key */
+import { teme } from '../../../../data.json';
+
 const FilterCard = () => {
   return (
     <>
       <h1>Teme</h1>
-      <div>
-        <p>React</p>
-        <p>Express</p>
-        <p>Next.JS</p>
-      </div>
+      <p>
+        {teme.map((val) => (
+          <p>{val.ime}</p>
+        ))}
+      </p>
     </>
   );
 };

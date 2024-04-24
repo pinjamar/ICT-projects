@@ -19,6 +19,7 @@ const TeacherCard = () => {
             <h2>{val.ime}</h2>
             <p>{val.biografija}</p>
             <h5>Organizacija: {val.organizacija}</h5>
+            <h6>Teme: {val.teme}</h6>
           </div>
         </div>
       ))}
