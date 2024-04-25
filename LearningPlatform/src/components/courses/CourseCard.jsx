@@ -12,7 +12,7 @@ const CoursesCard = () => {
               <div className="content flex">
                 <div className="left">
                   <div className="img">
-                    {/* <img src={val.cover} alt="" /> */}
+                    <img src={val.cover} alt="" />
                   </div>
                 </div>
                 <div className="text">
@@ -26,23 +26,9 @@ const CoursesCard = () => {
                     <label htmlFor="">(5.0)</label>
                   </div>
                   <div className="details">
-                    {/* {val.courTeacher.map((details) => (
-                      <>
-                        <div className="box">
-                          <div className="dimg">
-                            <img src={details.dcover} alt="" />
-                          </div>
-                          <div className="para">
-                            <h4>{details.name}</h4>
-                          </div>
-                        </div>
-                        <span>{details.totalTime}</span>
-                      </>
-                    ))} */}
+                    <p>{val.opis}</p>
                     <h1>{val.datum}</h1>
                     <h1>{val.predavac}</h1>
-                    <h1>{val.opis}</h1>
-                    <h1>{val.broj_prijava}</h1>
                   </div>
                 </div>
               </div>

@@ -19,8 +19,15 @@ const TeacherCard = () => {
             <h2>{val.ime}</h2>
             <p>{val.biografija}</p>
             <h5>Organizacija: {val.organizacija}</h5>
-            <h6>Teme: {val.teme}</h6>
+            <h6>Teme: {val.tema}</h6>
+            {val.tema.map((item) => (
+              <>
+                <p>{item}</p>
+              </>
+            ))}
           </div>
+          <button>Pregledaj radionice</button>
+          <button>Uredi</button>
         </div>
       ))}
     </>

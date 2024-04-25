@@ -3,6 +3,7 @@
     {
       "id": "radionica_1",
       "ime": "Radionica 1",
+      "cover": "./public/images/courses/fizika.jpg",
       "datum": "01.01.2025",
       "predavac": "predavac_1",
       "opis": "Kratki opis radionice 1",
@@ -11,40 +12,45 @@
     {
       "id": "radionica_2",
       "ime": "Radionica 1",
+      "cover": "./public/images/courses/magija.jpg",
       "datum": "01.01.2025",
-      "predavac": "predavac_1",
+      "predavac": "predavac_2",
       "opis": "Kratki opis radionice 1",
       "broj_prijava": 0
     },
     {
       "id": "radionica_3",
       "ime": "Radionica 1",
+      "cover": "./public/images/courses/gradnja.jpg",
       "datum": "01.01.2025",
-      "predavac": "predavac_1",
+      "predavac": "predavac_3",
       "opis": "Kratki opis radionice 1",
       "broj_prijava": 0
     },
     {
-      "id": "radionica_3",
+      "id": "radionica_4",
       "ime": "Radionica 1",
+      "cover": "./public/images/courses/kemija.jpg",
       "datum": "01.01.2025",
-      "predavac": "predavac_1",
+      "predavac": "predavac_4",
       "opis": "Kratki opis radionice 1",
       "broj_prijava": 0
     },
     {
-      "id": "radionica_3",
+      "id": "radionica_5",
       "ime": "Radionica 1",
+      "cover": "./public/images/courses/hakiranje.jpg",
       "datum": "01.01.2025",
-      "predavac": "predavac_1",
+      "predavac": "predavac_5",
       "opis": "Kratki opis radionice 1",
       "broj_prijava": 0
     },
     {
-      "id": "radionica_3",
+      "id": "radionica_6",
       "ime": "Radionica 1",
+      "cover": "./public/images/courses/robotika.jpg",
       "datum": "01.01.2025",
-      "predavac": "predavac_1",
+      "predavac": "predavac_6",
       "opis": "Kratki opis radionice 1",
       "broj_prijava": 0
     }
@@ -55,62 +61,68 @@
       "ime": "Dr. Robert Lee",
       "cover": "./public/images/teachers/einstein.jpg",
       "biografija": "An accomplished physics educator with a Ph.D. from MIT. With a decade of teaching experience, Dr. Lee is renowned for her ability to make complex physics concepts relatable and engaging for students. Through her innovative teaching methods and unwavering dedication, he inspires a new generation of aspiring scientists to explore the wonders of the universe.",
-      "organizacija": "Institut Max Planck"
+      "organizacija": "Institut Max Planck",
+      "tema": ["Znanost", "Programiranje"]
     },
     {
       "id": "predavac_2",
       "ime": "Luna Blackwood",
       "cover": "./public/images/teachers/granger.jpg",
       "biografija": "A magic instructor with years of experience in the mystical arts. With a background in ancient arcane studies and modern spellcraft, Professor Blackwood brings a unique blend of tradition and innovation to her teaching. Through her enchanting lessons and interactive demonstrations, she inspires her students to unlock the secrets of magic and embark on their own magical journeys.",
-      "organizacija": "Akademija Hogwarts"
+      "organizacija": "Akademija Hogwarts",
+      "tema": ["Magija"]
     },
     {
       "id": "predavac_3",
       "ime": "David Martinez",
       "cover": "./public/images/teachers/strojar.jpg",
       "biografija": "A seasoned engineering educator with a Master's degree in Mechanical Engineering from Stanford University. With a decade of teaching experience, Professor Martinez is known for his dynamic approach to teaching, integrating real-world applications and hands-on projects into his curriculum. He is dedicated to empowering his students with the skills and knowledge they need to excel in the field of engineering.",
-      "organizacija": "Fakultet Jure Radic"
+      "organizacija": "Fakultet Ulica",
+      "tema": ["Znanost"]
     },
     {
       "id": "predavac_4",
-      "ime": "Sara Chronos",
-      "cover": "./public/images/teachers/plava.jpg",
+      "ime": "Nina Chronos",
+      "cover": "./public/images/teachers/chemist.jpg",
       "biografija": "Step into the classroom of Professor Chronos, a time-traveling educator with a Ph.D. in Temporal Mechanics. With millennia of teaching experience spanning across epochs, Professor Chronos seamlessly intertwines history and future studies in his lessons. Through her innovative approach, she guides students on a mind-bending journey through time, inspiring them to explore the past, present, and future.",
-      "organizacija": "Akademija Hogwarts"
+      "organizacija": "Akademija Hogwarts",
+      "tema": ["Znanost", "Magija"]
     },
     {
-      "id": "predavac_3",
-      "ime": "David Martinez",
-      "cover": "./public/images/teachers/strojar.jpg",
-      "biografija": "A seasoned engineering educator with a Master's degree in Mechanical Engineering from Stanford University. With a decade of teaching experience, Professor Martinez is known for his dynamic approach to teaching, integrating real-world applications and hands-on projects into his curriculum. He is dedicated to empowering his students with the skills and knowledge they need to excel in the field of engineering.",
-      "organizacija": "Fakultet Jure Radic"
+      "id": "predavac_5",
+      "ime": "Alan Smith",
+      "cover": "./public/images/teachers/hacker.jpg",
+      "biografija": "Meet Professor Alan Smith, a computer whizz and trailblazer in the field of computer science. With a wealth of industry experience and a knack for solving complex problems, Professor Smith brings a dynamic approach to teaching. His passion for technology and commitment to innovation empower students to excel in the ever-evolving world of computing.",
+      "organizacija": "Fakultet Ulica",
+      "tema": ["Programiranje"]
     },
     {
-      "id": "predavac_3",
-      "ime": "David Martinez",
-      "cover": "./public/images/teachers/strojar.jpg",
-      "biografija": "A seasoned engineering educator with a Master's degree in Mechanical Engineering from Stanford University. With a decade of teaching experience, Professor Martinez is known for his dynamic approach to teaching, integrating real-world applications and hands-on projects into his curriculum. He is dedicated to empowering his students with the skills and knowledge they need to excel in the field of engineering.",
-      "organizacija": "Fakultet Jure Radic"
+      "id": "predavac_6",
+      "ime": "Dr. Samantha Styx",
+      "cover": "./public/images/teachers/roboto.jpg",
+      "biografija": "A distinguished robotics professor, holds a Ph.D. in Robotics Engineering from MIT. With over a decade of experience in the field, Dr. Styx is renowned for her groundbreaking research in artificial intelligence, humanoid robotics, and autonomous systems. Through her innovative teaching methods and mentorship, she inspires students to push the boundaries of robotics and shape the future of technology.",
+      "organizacija": "Institut Max Planck",
+      "tema": ["Znanost", "Programiranje"]
     }
   ],
   "organizacije": [
     {
       "id": "organizacija_1",
       "ime": "Akademija Hogwarts",
-      "opis": "Opis organizacije 1",
-      "radionice": ["radionica_1"]
+      "opis": "Hogwarts Academy is a prestigious school of witchcraft and wizardry. With its towering turrets, enchanted corridors, and mystical atmosphere, Hogwarts is where young witches and wizards embark on a journey of magical education, learning spells, potions, and the intricacies of the wizarding world while forging lifelong friendships and facing thrilling adventures. Led by esteemed professors and overseen by the wise and enigmatic Headmaster, Hogwarts Academy remains a symbol of magic, knowledge, and the enduring power of friendship.",
+      "radionice": ["radionica_1", "radionica_3"]
     },
     {
       "id": "organizacija_2",
       "ime": "Institut Max Planck",
-      "opis": "Opis organizacije 1",
-      "radionice": ["radionica_1"]
+      "opis": "A renowned center of research and innovation at the forefront of scientific discovery. Its interdisciplinary approach, state-of-the-art facilities, and collaborative environment foster groundbreaking research across various scientific disciplines. From fundamental research to practical applications, the Science Institute drives progress, advances knowledge, and addresses complex challenges facing humanity in the modern era.",
+      "radionice": ["radionica_2", "radionica_6"]
     },
     {
       "id": "organizacija_3",
-      "ime": "Organizacija 1",
-      "opis": "Opis organizacije 1",
-      "radionice": ["radionica_1"]
+      "ime": "Fakultet Ulica",
+      "opis": "Streets Faculty is a vibrant institution nestled in the heart of a bustling city, offering a unique blend of academic excellence and real-world experience. With its diverse faculty and dynamic curriculum, Streets Faculty prepares students for success in urban planning, architecture, and community development. Through hands-on projects and partnerships with local organizations, students at Streets Faculty are equipped with the knowledge and skills to positively impact the communities they serve.",
+      "radionice": ["radionica_4", "radionica_5"]
     }
   ],
   "tezine": [
