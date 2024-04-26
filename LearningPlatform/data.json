@@ -2,7 +2,7 @@
   "radionice": [
     {
       "id": "radionica_1",
-      "ime": "Radionica 1",
+      "ime": "Znanost superjunaka",
       "cover": "./public/images/courses/fizika.jpg",
       "datum": "01.01.2025",
       "predavac": "predavac_1",
@@ -11,7 +11,7 @@
     },
     {
       "id": "radionica_2",
-      "ime": "Radionica 1",
+      "ime": "Anatomija jednoroga ",
       "cover": "./public/images/courses/magija.jpg",
       "datum": "01.01.2025",
       "predavac": "predavac_2",
@@ -20,7 +20,7 @@
     },
     {
       "id": "radionica_3",
-      "ime": "Radionica 1",
+      "ime": "Gradnja kule od karata",
       "cover": "./public/images/courses/gradnja.jpg",
       "datum": "01.01.2025",
       "predavac": "predavac_3",
@@ -29,7 +29,7 @@
     },
     {
       "id": "radionica_4",
-      "ime": "Radionica 1",
+      "ime": "Zombi apokalipsa",
       "cover": "./public/images/courses/kemija.jpg",
       "datum": "01.01.2025",
       "predavac": "predavac_4",
@@ -38,7 +38,7 @@
     },
     {
       "id": "radionica_5",
-      "ime": "Radionica 1",
+      "ime": "Umjetnost prokrastinacije",
       "cover": "./public/images/courses/hakiranje.jpg",
       "datum": "01.01.2025",
       "predavac": "predavac_5",
@@ -47,7 +47,7 @@
     },
     {
       "id": "radionica_6",
-      "ime": "Radionica 1",
+      "ime": "Uvod u NLO sociologiju",
       "cover": "./public/images/courses/robotika.jpg",
       "datum": "01.01.2025",
       "predavac": "predavac_6",

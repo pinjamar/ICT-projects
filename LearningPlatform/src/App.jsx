@@ -5,6 +5,8 @@ import Home from './components/home/Home';
 import Courses from './components/courses/Courses';
 import Teachers from './components/teachers/Teachers';
 import Admin from './components/admin/Admin';
+import AdminOrganizations from './components/admin/AdminOrganizations';
+import AdminTeachers from './components/admin/AdminTeachers';
 
 const App = () => {
   return (
@@ -12,9 +14,11 @@ const App = () => {
       <Header />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/radionice" component={Courses} />
-        <Route exact path="/predavaci" component={Teachers} />
-        <Route exact path="/admin" component={Admin} />
+        <Route path="/radionice" component={Courses} />
+        <Route path="/predavaci" component={Teachers} />
+        <Route exact path="/admin" component={Admin}>
+          {/* <Route path="/admin/organizacije" component={AdminOrganizations} /> */}
+        </Route>
       </Switch>
     </Router>
   );

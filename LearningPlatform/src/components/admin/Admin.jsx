@@ -18,13 +18,7 @@ function Admin() {
   ));
   return (
     <div className="admin-radionice">
-      <div>
-        <AdminHeader />
-        <h2>Radionice</h2>
-        <h2>Organizacije</h2>
-        <h2>Predavaci</h2>
-        <button>+Dodaj</button>
-      </div>
+      <AdminHeader />
       {mapiraneRadionice}
     </div>
   );

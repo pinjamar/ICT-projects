@@ -6,7 +6,7 @@
 }
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #f3f8f8;
+  background-color: rgb(141, 207, 184);
 }
 
 /*------------global-----------*/
@@ -87,7 +87,6 @@ p {
 }
 
 .back {
-  background-image: url('../public/images/back.webp');
   background-size: cover;
   background-attachment: fixed;
   position: absolute;

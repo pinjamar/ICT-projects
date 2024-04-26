@@ -3,12 +3,12 @@ import data from '../../../data.json';
 
 function AdminOrganization() {
   const organizacije = data.organizacije;
-  const radioniceOrganizacija = organizacije.organizacija;
+  //   const radioniceOrganizacija = organizacije.organizacija;
 
   const mapiraneOrganizacije = organizacije.map((organizacija) => (
     <div key={organizacija.id}>
       <td>{organizacija.ime}</td>
-      <td>{radioniceOrganizacija.map((r) => ({ r }))}</td>
+      {/* <td>{radioniceOrganizacija.map((r) => ({ r }))}</td> */}
       <button>Uredi</button>
       <button>Izbriši</button>
     </div>

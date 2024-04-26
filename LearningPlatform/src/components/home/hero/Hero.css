@@ -1,6 +1,4 @@
 .hero {
-  /* background-image: url('../../../../public/images/bg.webp'); */
-  background-color: rgb(141, 207, 184);
   background-size: cover;
   background-attachment: fixed;
   position: absolute;
