@@ -1,16 +1,32 @@
 /* eslint-disable react/jsx-key */
 import { useState } from 'react';
-import { organizacije } from '../../../../data.json';
+import PropTypes from 'prop-types';
 
-const OrganizationFilter = () => {
+const OrganizationFilter = (props) => {
   const [selectedOrganization, setSelectedOrganization] = useState('all');
 
+  const { onOrgChange } = props;
+
   const handleOptionChange = (event) => {
-    setSelectedOrganization(event.target.value);
+    let selectedValue = event.target.value;
+    setSelectedOrganization(selectedValue);
+    if (selectedValue === 'all') {
+      selectedValue = null;
+    }
+    onOrgChange(selectedValue);
   };
   return (
     <>
       <h1>Organizacije</h1>
+      <label>
+        <input
+          type="radio"
+          value="all"
+          checked={selectedOrganization === 'all'}
+          onChange={handleOptionChange}
+        />
+        Svi
+      </label>
       <label>
         <input
           type="radio"
@@ -40,6 +56,10 @@ const OrganizationFilter = () => {
       </label>
     </>
   );
+};
+
+OrganizationFilter.propTypes = {
+  onOrgChange: PropTypes.func,
 };
 
 export default OrganizationFilter;

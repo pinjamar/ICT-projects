@@ -3,17 +3,39 @@ import ThemeFilter from '../common/filters/ThemeFilter';
 import OrganizationFilter from '../common/filters/OrganizationFilter';
 import './teachers.css';
 
+import { predavaci } from '../../../data';
+import { useState } from 'react';
+
 const Team = () => {
+  const [teachers, setTeachers] = useState(predavaci);
+
+  const onOrgChange = (newOrg) => {
+    let filteredTeachers = predavaci;
+    if (newOrg) {
+      filteredTeachers = predavaci.filter((e) => e.organizacija === newOrg);
+    }
+    setTeachers(filteredTeachers);
+  };
+
+  const onThemeChange = (newTheme) => {
+    let filteredTeachers = predavaci;
+    if (newTheme) {
+      filteredTeachers = predavaci.filter((e) => e.tema === newTheme);
+    }
+    setTeachers(filteredTeachers);
+  };
   return (
     <section className="team padding">
       <button>+ Dodaj novog predavaca</button>
       <div className="teachers-page">
         <div className="filters">
-          <ThemeFilter />
-          <OrganizationFilter />
+          <ThemeFilter onThemeChange={onThemeChange} />
+          <OrganizationFilter onOrgChange={onOrgChange} />
         </div>
         <div className="container grid">
-          <TeacherCard />
+          {teachers.map((item) => (
+            <TeacherCard key={item.id} teacher={item} />
+          ))}
         </div>
       </div>
     </section>
