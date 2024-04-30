@@ -6,9 +6,10 @@
       "cover": "./public/images/courses/fizika.jpg",
       "datum": "01.01.2025",
       "predavac": "predavac_1",
-      "opis": "Kratki opis radionice 1",
+      "opis": "Tečaj za superjunaka je intenzivni program obuke koji uči polaznike kako postati heroji, od borilačkih vještina do upravljanja moćima, pružajući im sve potrebne alate za spašavanje svijeta. Kroz simulirane misije i vježbe, tečaj priprema buduće junake za suočavanje s najtežim izazovima i donošenje pravilnih odluka u kritičnim situacijama.",
       "broj_prijava": 0,
-      "tezina": "Mid"
+      "tezina": "Mid",
+      "tema": ["Znanost"]
     },
     {
       "id": "radionica_2",
@@ -16,9 +17,10 @@
       "cover": "./public/images/courses/magija.jpg",
       "datum": "01.01.2025",
       "predavac": "predavac_2",
-      "opis": "Kratki opis radionice 1",
+      "opis": "Tečaj anatomije jednoroga pruža temeljito razumijevanje unikatne građe i funkcija ovog mitskog stvorenja, istražujući sve od strukture rogova do unutarnjih organa. Polaznici će imati priliku produbiti svoje znanje o biologiji jednoroga i razviti sposobnosti za rad s tim čarobnim bićem u različitim kontekstima.",
       "broj_prijava": 0,
-      "tezina": "Senior"
+      "tezina": "Senior",
+      "tema": ["Magija"]
     },
     {
       "id": "radionica_3",
@@ -26,9 +28,10 @@
       "cover": "./public/images/courses/gradnja.jpg",
       "datum": "01.01.2025",
       "predavac": "predavac_3",
-      "opis": "Kratki opis radionice 1",
+      "opis": "Tečaj gradnje kule od karata pruža polaznicima priliku da nauče temeljne principe i tehnike potrebne za izgradnju visokih i stabilnih struktura od karata. Kroz praktične vježbe i savladavanje izazova, polaznici će razviti svoje vještine u konstrukciji i ojačati svoje razumijevanje fizike i inženjeringa.",
       "broj_prijava": 0,
-      "tezina": "Senior"
+      "tezina": "Senior",
+      "tema": ["Znanost", "Magija"]
     },
     {
       "id": "radionica_4",
@@ -36,9 +39,10 @@
       "cover": "./public/images/courses/kemija.jpg",
       "datum": "01.01.2025",
       "predavac": "predavac_4",
-      "opis": "Kratki opis radionice 1",
+      "opis": "Tečaj za zombi apokalipsu je intenzivni program koji polaznike uči svim potrebnim vještinama za preživljavanje i borbu u svijetu opustošenom zombijima, uključujući taktičko planiranje, samoodbranu i resursno upravljanje. Kroz simulirane scenarije i praktične vježbe, polaznici će biti pripremljeni za suočavanje s ekstremnim situacijama i osposobljeni za zaštitu sebe i drugih u slučaju zombi napada.",
       "broj_prijava": 0,
-      "tezina": "Junior"
+      "tezina": "Junior",
+      "tema": ["Programiranje", "Magija"]
     },
     {
       "id": "radionica_5",
@@ -46,9 +50,10 @@
       "cover": "./public/images/courses/hakiranje.jpg",
       "datum": "01.01.2025",
       "predavac": "predavac_5",
-      "opis": "Kratki opis radionice 1",
+      "opis": "Tečaj za prokrastinaciju je program koji pomaže polaznicima razumjeti korijene i posljedice odgađanja te ih uči strategijama za prevladavanje navike odgađanja i povećanje produktivnosti. Kroz interaktivne radionice i tehnike upravljanja vremenom, polaznici će naučiti kako efikasno planirati i izvršavati zadatke bez nepotrebnog odlaganja.",
       "broj_prijava": 0,
-      "tezina": "Mid"
+      "tezina": "Mid",
+      "tema": ["Programiranje"]
     },
     {
       "id": "radionica_6",
@@ -56,9 +61,10 @@
       "cover": "./public/images/courses/robotika.jpg",
       "datum": "01.01.2025",
       "predavac": "predavac_6",
-      "opis": "Kratki opis radionice 1",
+      "opis": "Tečaj za NLO sociologiju je program koji istražuje fenomene povezane s izvanzemaljskim kontaktima i njihovim utjecajem na ljudsko društvo, pružajući polaznicima uvid u sociološke perspektive, teorije i prakse vezane uz ovu temu. Kroz analizu iskustava, vjerovanja i društvenih reakcija na navodne NLO pojave, polaznici će razumjeti kompleksnost interakcije između ljudi i mogućih vanzemaljskih entiteta.",
       "broj_prijava": 0,
-      "tezina": "Senior"
+      "tezina": "Senior",
+      "tema": ["Znanost", "Programiranje"]
     }
   ],
   "predavaci": [
@@ -66,7 +72,7 @@
       "id": "predavac_1",
       "ime": "Dr. Robert Lee",
       "cover": "./public/images/teachers/einstein.jpg",
-      "biografija": "An accomplished physics educator with a Ph.D. from MIT. With a decade of teaching experience, Dr. Lee is renowned for her ability to make complex physics concepts relatable and engaging for students. Through her innovative teaching methods and unwavering dedication, he inspires a new generation of aspiring scientists to explore the wonders of the universe.",
+      "biografija": "Iskusan edukator fizike s doktoratom sa MIT-a. S desetljećem iskustva u podučavanju, Dr. Lee je poznat po svojoj sposobnosti da kompleksne koncepte fizike učini relevantnima i zanimljivima za studente. Kroz svoje inovativne metode podučavanja i nepokolebljivu predanost, on inspirira novu generaciju budućih znanstvenika da istraže čuda svemira.",
       "organizacija": "Institut Max Planck",
       "tema": ["Znanost", "Programiranje"]
     },
@@ -74,7 +80,7 @@
       "id": "predavac_2",
       "ime": "Luna Blackwood",
       "cover": "./public/images/teachers/granger.jpg",
-      "biografija": "A magic instructor with years of experience in the mystical arts. With a background in ancient arcane studies and modern spellcraft, Professor Blackwood brings a unique blend of tradition and innovation to her teaching. Through her enchanting lessons and interactive demonstrations, she inspires her students to unlock the secrets of magic and embark on their own magical journeys.",
+      "biografija": "Instruktorica magije s godinama iskustva u mističnim umjetnostima. Sa pozadinom u drevnim arkanim studijima i suvremenom čarolijom, profesorica Blackwood donosi jedinstvenu kombinaciju tradicije i inovacije u svoje podučavanje. Kroz svoje očaravajuće lekcije i interaktivne demonstracije, inspirira svoje studente da otključaju tajne magije i krenu na vlastita čarobna putovanja.",
       "organizacija": "Akademija Hogwarts",
       "tema": ["Magija"]
     },
@@ -82,7 +88,7 @@
       "id": "predavac_3",
       "ime": "David Martinez",
       "cover": "./public/images/teachers/strojar.jpg",
-      "biografija": "A seasoned engineering educator with a Master's degree in Mechanical Engineering from Stanford University. With a decade of teaching experience, Professor Martinez is known for his dynamic approach to teaching, integrating real-world applications and hands-on projects into his curriculum. He is dedicated to empowering his students with the skills and knowledge they need to excel in the field of engineering.",
+      "biografija": "Iskusni edukator u inženjeringu s magisterijem iz strojarstva na Stanford Universityju. S desetljećem iskustva u podučavanju, profesor Martinez poznat je po dinamičnom pristupu podučavanju, integrirajući stvarne primjene i praktične projekte u svoj kurikulum. Posvećen je osnaživanju svojih studenata vještinama i znanjem koje im je potrebno kako bi se istaknuli u području inženjeringa.",
       "organizacija": "Fakultet Ulica",
       "tema": ["Znanost"]
     },
@@ -90,7 +96,7 @@
       "id": "predavac_4",
       "ime": "Nina Chronos",
       "cover": "./public/images/teachers/chemist.jpg",
-      "biografija": "Step into the classroom of Professor Chronos, a time-traveling educator with a Ph.D. in Temporal Mechanics. With millennia of teaching experience spanning across epochs, Professor Chronos seamlessly intertwines history and future studies in his lessons. Through her innovative approach, she guides students on a mind-bending journey through time, inspiring them to explore the past, present, and future.",
+      "biografija": "Zaputite se u učionicu profesorice Chronos, edukatora koji putuje kroz vrijeme s doktoratom iz Temporalne mehanike. Sa tisućljećima iskustva u podučavanju koje se proteže kroz epohe, profesorica Chronos besprijekorno isprepliće povijest i proučavanje budućnosti u svojim lekcijama. Kroz svoj inovativni pristup, ona vodi studente na izazovno putovanje kroz vrijeme, inspirirajući ih da istraže prošlost, sadašnjost i budućnost.",
       "organizacija": "Akademija Hogwarts",
       "tema": ["Znanost", "Magija"]
     },
@@ -98,7 +104,7 @@
       "id": "predavac_5",
       "ime": "Alan Smith",
       "cover": "./public/images/teachers/hacker.jpg",
-      "biografija": "Meet Professor Alan Smith, a computer whizz and trailblazer in the field of computer science. With a wealth of industry experience and a knack for solving complex problems, Professor Smith brings a dynamic approach to teaching. His passion for technology and commitment to innovation empower students to excel in the ever-evolving world of computing.",
+      "biografija": "Upoznajte profesora Alana Smitha, računalnog genija i pionira u području računalne znanosti. S bogatim iskustvom u industriji i vještinom rješavanja složenih problema, profesor Smith donosi dinamičan pristup podučavanju. Njegova strast prema tehnologiji i predanost inovacijama osnažuju studente da se istaknu u uvijek mijenjajućem svijetu računarstva.",
       "organizacija": "Fakultet Ulica",
       "tema": ["Programiranje"]
     },
@@ -106,7 +112,7 @@
       "id": "predavac_6",
       "ime": "Dr. Samantha Styx",
       "cover": "./public/images/teachers/roboto.jpg",
-      "biografija": "A distinguished robotics professor, holds a Ph.D. in Robotics Engineering from MIT. With over a decade of experience in the field, Dr. Styx is renowned for her groundbreaking research in artificial intelligence, humanoid robotics, and autonomous systems. Through her innovative teaching methods and mentorship, she inspires students to push the boundaries of robotics and shape the future of technology.",
+      "biografija": "Cijenjena profesorica robotike, ima doktorat iz robotičkog inženjerstva s MIT-a. Sa više od desetljeća iskustva u području, Dr. Styx je poznata po svojem revolucionarnom istraživanju umjetne inteligencije, humanoidne robotike i autonomnih sustava. Kroz svoje inovativne metode podučavanja i mentorski rad, inspirira studente da dosegnu granice robotike i oblikuju budućnost tehnologije.",
       "organizacija": "Institut Max Planck",
       "tema": ["Znanost", "Programiranje"]
     }

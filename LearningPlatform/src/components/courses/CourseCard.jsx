@@ -1,9 +1,8 @@
 /* eslint-disable react/jsx-key */
-// import './courses.css';
 import PropTypes from 'prop-types'; // ES6
 
 const CourseCard = (props) => {
-  const { cover, ime, datum, opis, predavac } = props.course;
+  const { cover, ime, opis, predavac, broj_prijava } = props.course;
   return (
     <>
       <section className="coursesCard">
@@ -16,7 +15,7 @@ const CourseCard = (props) => {
                 </div>
               </div>
               <div className="text">
-                <h1>{ime}</h1>
+                <h2>{ime}</h2>
                 <div className="rate">
                   <i className="fa fa-star"></i>
                   <i className="fa fa-star"></i>
@@ -27,12 +26,13 @@ const CourseCard = (props) => {
                 </div>
                 <div className="details">
                   <p>{opis}</p>
-                  <h1>{datum}</h1>
                   <h1>{predavac}</h1>
+                  <p>Broj studenata: {broj_prijava}</p>
                 </div>
               </div>
             </div>
-            <button className="outline-btn">ENROLL NOW !</button>
+            <button className="outline-btn">Prijavi se!</button>
+            <button className="outline-btn">Uredi</button>
           </div>
         </div>
       </section>
@@ -44,9 +44,9 @@ CourseCard.propTypes = {
   course: PropTypes.shape({
     cover: PropTypes.string,
     ime: PropTypes.string,
-    datum: PropTypes.string,
     opis: PropTypes.string,
     predavac: PropTypes.array,
+    broj_prijava: PropTypes.number,
   }),
 };
 

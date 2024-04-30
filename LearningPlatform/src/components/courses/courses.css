@@ -1,6 +1,7 @@
-.coursesCard {
-  padding: 50px 0;
+.courses-page {
+  display: flex;
 }
+
 .coursesCard .items {
   background-color: #fff;
   padding: 30px;
@@ -9,9 +10,6 @@
 .coursesCard .img {
   width: 80px;
   height: 80px;
-  border-radius: 50%;
-  background-color: #1eb2a6;
-  padding: 15px;
 }
 .coursesCard img {
   width: 100%;

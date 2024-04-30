@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import CourseCard from './CourseCard';
 import ThemeFilter from '../common/filters/ThemeFilter';
 import DifficultyFilter from '../common/filters/DifficultyFilter';
@@ -7,26 +8,45 @@ import { radionice } from '../../../data';
 import { useState } from 'react';
 
 const Workshops = () => {
-  const [workshops, setWorkshops] = useState(radionice);
+  const [courses, setCourses] = useState(radionice);
 
-  const onDifChange = (newDif) => {
-    let filteredWorkshops = radionice;
-    if (newDif) {
-      filteredWorkshops = radionice.filter((e) => e.tezina === newDif);
-    }
-    setWorkshops(filteredWorkshops);
+  const [themeFilter, setThemeFilter] = useState(null);
+  const [difFilter, setDifFilter] = useState(null);
+
+  const onDifChange = (newOrg) => {
+    setDifFilter(newOrg);
   };
+
+  const onThemeChange = (newTheme) => {
+    setThemeFilter(newTheme);
+  };
+
+  const doFilter = () => {
+    let filteredCourses = radionice;
+    if (difFilter) {
+      filteredCourses = filteredCourses.filter((e) => e.tezina === difFilter);
+    }
+
+    if (themeFilter) {
+      filteredCourses = filteredCourses.filter((e) =>
+        e.tema.includes(themeFilter)
+      );
+    }
+
+    setCourses(filteredCourses);
+  };
+
+  useEffect(doFilter, [themeFilter, difFilter]);
   return (
-    <section className="team padding">
+    <section className="course padding">
       <button>+ Dodaj novu radionicu</button>
-      <div className="teachers-page">
+      <div className="courses-page">
         <div className="filters">
-          <ThemeFilter />
+          <ThemeFilter onThemeChange={onThemeChange} />
           <DifficultyFilter onDifChange={onDifChange} />
         </div>
         <div className="container grid">
-          {/* <CourseCard /> */}
-          {workshops.map((item) => (
+          {courses.map((item) => (
             <CourseCard key={item.id} course={item} />
           ))}
         </div>
