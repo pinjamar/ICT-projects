@@ -42,6 +42,32 @@ header ul li a:hover {
 .toggle {
   display: none;
 }
+
+/*--------admin-header------------*/
+
+.admin-header {
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 30px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 10px;
+}
+.admin-header ul {
+  display: flex;
+  margin-left: 10px;
+}
+.admin-header ul li {
+  margin: 0 20px;
+}
+.admin-header ul li a {
+  color: rgb(9, 90, 9);
+}
+
+.admin-header-button {
+  margin: 0 0 0 20px;
+}
+
 /*--------header------------*/
 @media screen and (max-width: 768px) {
   .start {

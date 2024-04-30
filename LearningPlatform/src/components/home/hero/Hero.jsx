@@ -1,4 +1,3 @@
-import Heading from '../../common/heading/Heading';
 import './hero.css';
 
 const Hero = () => {
@@ -7,20 +6,20 @@ const Hero = () => {
       <section className="hero">
         <div className="container">
           <div className="row">
-            <Heading
-              subtitle="WELCOME TO ACADEMIA"
-              title="Best Online Education Expertise"
-            />
+            <h1 className="main-title">DOBRODOŠLI NA ACADEMIU</h1>
+            <h2>Najbolja online edukacija na jednom mjestu</h2>
             <p>
-              Far far away, behind the word mountains, far from the countries
-              Vokalia and Consonantia, there live the blind texts.
+              Daleko, daleko, iza rijeka i planina, daleko od zemalja Vokalija i
+              Konsonantija, žive nevidljivi tekstovi i sveznajući profesori.
             </p>
             <div className="button">
               <button className="primary-btn">
-                GET STARTED NOW <i className="fa fa-long-arrow-alt-right"></i>
+                UPOZNAJTE PROFESORE{' '}
+                <i className="fa fa-long-arrow-alt-right"></i>
               </button>
               <button>
-                VIEW COURSE <i className="fa fa-long-arrow-alt-right"></i>
+                POGLEDAJTE RADIONICE{' '}
+                <i className="fa fa-long-arrow-alt-right"></i>
               </button>
             </div>
           </div>
