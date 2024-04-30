@@ -122,7 +122,7 @@ p {
 }
 .grid2 {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   grid-gap: 30px;
 }
 .outline-btn {
@@ -136,11 +136,7 @@ p {
   background-color: #1eb2a6;
   color: #fff;
 }
-.grid3 {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-gap: 10px;
-}
+
 .padding {
   padding: 80px 0;
 }
@@ -149,14 +145,11 @@ p {
   background-color: #fff;
 }
 @media screen and (max-width: 768px) {
-  .grid2,
-  .grid3,
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .back {
-    background-position: center;
-    padding-top: 50%;
-    height: 80vh;
+
+  .grid2 {
+    margin: 10px;
   }
 }

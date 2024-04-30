@@ -2,41 +2,30 @@
 import PropTypes from 'prop-types'; // ES6
 
 const CourseCard = (props) => {
-  const { cover, ime, opis, predavac, broj_prijava } = props.course;
+  const { cover, ime, opis, predavac } = props.course;
   return (
-    <>
-      <section className="coursesCard">
-        <div className="container grid2">
-          <div className="items">
-            <div className="content flex">
-              <div className="left">
-                <div className="img">
-                  <img src={cover} alt="" />
-                </div>
-              </div>
-              <div className="text">
-                <h2>{ime}</h2>
-                <div className="rate">
-                  <i className="fa fa-star"></i>
-                  <i className="fa fa-star"></i>
-                  <i className="fa fa-star"></i>
-                  <i className="fa fa-star"></i>
-                  <i className="fa fa-star"></i>
-                  <label htmlFor="">(5.0)</label>
-                </div>
-                <div className="details">
-                  <p>{opis}</p>
-                  <h1>{predavac}</h1>
-                  <p>Broj studenata: {broj_prijava}</p>
-                </div>
-              </div>
+    <div className="coursesCard">
+      <div className="items">
+        <div className="content flex">
+          <div className="left">
+            <div className="img">
+              <img src={cover} alt="" />
             </div>
-            <button className="outline-btn">Prijavi se!</button>
-            <button className="outline-btn">Uredi</button>
+          </div>
+          <div className="text">
+            <h1>{ime}</h1>
+            <div className="details">
+              <p>{opis}</p>
+              <h4>Predavač: {predavac}</h4>
+            </div>
+            <div className="courses-buttons">
+              <button className="course-btn-apply">Prijavi se!</button>
+              <button className="course-btn-edit">Uredi</button>
+            </div>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </div>
   );
 };
 
@@ -46,7 +35,6 @@ CourseCard.propTypes = {
     ime: PropTypes.string,
     opis: PropTypes.string,
     predavac: PropTypes.array,
-    broj_prijava: PropTypes.number,
   }),
 };
 

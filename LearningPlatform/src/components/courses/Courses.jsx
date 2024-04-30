@@ -45,7 +45,7 @@ const Workshops = () => {
           <ThemeFilter onThemeChange={onThemeChange} />
           <DifficultyFilter onDifChange={onDifChange} />
         </div>
-        <div className="container grid">
+        <div className="container grid2">
           {courses.map((item) => (
             <CourseCard key={item.id} course={item} />
           ))}

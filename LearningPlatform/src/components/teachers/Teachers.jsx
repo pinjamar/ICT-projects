@@ -43,7 +43,9 @@ const Team = () => {
 
   return (
     <section className="team padding">
-      <button>+ Dodaj novog predavaca</button>
+      <button className="admin-button add-teacher">
+        + Dodaj novog predavaca
+      </button>
       <div className="teachers-page">
         <div className="filters">
           <ThemeFilter onThemeChange={onThemeChange} />

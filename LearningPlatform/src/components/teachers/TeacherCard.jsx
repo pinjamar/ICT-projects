@@ -24,7 +24,7 @@ const TeacherCard = (props) => {
         ))}
       </div>
       <button>Pregledaj radionice</button>
-      <button>Uredi</button>
+      <button className="admin-button edit-teacher">Uredi</button>
     </div>
   );
 };
