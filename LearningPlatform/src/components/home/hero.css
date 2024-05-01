@@ -25,6 +25,10 @@
   font-size: xx-large;
   color: aquamarine;
 }
+
+.home-button {
+  margin-top: 5%;
+}
 @media screen and (max-width: 768px) {
   .margin {
     height: 40vh;

@@ -13,7 +13,7 @@ const Hero = () => {
               Daleko, daleko, iza rijeka i planina, daleko od zemalja Vokalija i
               Konsonantija, žive nevidljivi tekstovi i sveznajući profesori.
             </p>
-            <div className="button">
+            <div className="home-button">
               <Link to="/predavaci">
                 <button className="primary-btn">
                   UPOZNAJTE PROFESORE{' '}

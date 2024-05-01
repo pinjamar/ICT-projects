@@ -3,7 +3,7 @@ import data from '../../../data.json';
 import AdminHeaderCourse from '../common/header/adminHeaders/AdminHeaderCourse';
 import './admin.css';
 
-function Admin() {
+function AdminCourses() {
   const radionice = data.radionice;
 
   const mapiraneRadionice = radionice.map((radionica) => (
@@ -25,4 +25,4 @@ function Admin() {
   );
 }
 
-export default Admin;
+export default AdminCourses;

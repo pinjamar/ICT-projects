@@ -121,20 +121,20 @@
     {
       "id": "organizacija_1",
       "ime": "Akademija Hogwarts",
-      "opis": "Hogwarts Academy is a prestigious school of witchcraft and wizardry. With its towering turrets, enchanted corridors, and mystical atmosphere, Hogwarts is where young witches and wizards embark on a journey of magical education, learning spells, potions, and the intricacies of the wizarding world while forging lifelong friendships and facing thrilling adventures. Led by esteemed professors and overseen by the wise and enigmatic Headmaster, Hogwarts Academy remains a symbol of magic, knowledge, and the enduring power of friendship.",
-      "radionice": ["radionica_1", "radionica_3"]
+      "opis": "Hogwarts Akademija je prestižna škola vještičarenja i čarobnjaštva. Sa svojim visokim kulama, očaravajućim hodnicima i mističnom atmosferom, Hogwarts je mjesto gdje mladi vještice i čarobnjaci kreću na putovanje čarobnom edukacijom, učeći čarolije, napitke i intrige čarobnjačkog svijeta dok grade trajna prijateljstva i suočavaju se s uzbudljivim avanturama. Pod vođstvom uglednih profesora i pod nadzorom mudrog i enigmatskog ravnatelja, Hogwarts Akademija ostaje simbol magije, znanja i trajne snage prijateljstva.",
+      "radionice": ["Anatomija jednoroga", "Zombi apokalipsa"]
     },
     {
       "id": "organizacija_2",
       "ime": "Institut Max Planck",
-      "opis": "A renowned center of research and innovation at the forefront of scientific discovery. Its interdisciplinary approach, state-of-the-art facilities, and collaborative environment foster groundbreaking research across various scientific disciplines. From fundamental research to practical applications, the Science Institute drives progress, advances knowledge, and addresses complex challenges facing humanity in the modern era.",
-      "radionice": ["radionica_2", "radionica_6"]
+      "opis": "Poznati centar istraživanja i inovacija na čelu znanstvenih otkrića. Njegov interdisciplinarni pristup, najsuvremeniji objekti i suradničko okruženje potiču revolucionarna istraživanja u različitim znanstvenim disciplinama. Od temeljnog istraživanja do praktičnih primjena, Znanstveni institut potiče napredak, unapređuje znanje i rješava kompleksne izazove s kojima se sučeljava čovječanstvo u modernoj eri.",
+      "radionice": ["Znanost superjunaka", "Uvod u NLO sociologiju"]
     },
     {
       "id": "organizacija_3",
       "ime": "Fakultet Ulica",
-      "opis": "Streets Faculty is a vibrant institution nestled in the heart of a bustling city, offering a unique blend of academic excellence and real-world experience. With its diverse faculty and dynamic curriculum, Streets Faculty prepares students for success in urban planning, architecture, and community development. Through hands-on projects and partnerships with local organizations, students at Streets Faculty are equipped with the knowledge and skills to positively impact the communities they serve.",
-      "radionice": ["radionica_4", "radionica_5"]
+      "opis": "Fakultet Ulice je živahna institucija smještena u srcu živahna grada, nudeći jedinstvenu kombinaciju akademske izvrsnosti i iskustva iz stvarnog svijeta. Sa svojim raznolikim profesorima i dinamičnim kurikulumom, Fakultet Ulice priprema studente za uspjeh u urbanom planiranju, arhitekturi i razvoju zajednice. Kroz praktične projekte i partnerstva s lokalnim organizacijama, studenti na Fakultetu Ulice opremljeni su znanjem i vještinama kako bi pozitivno utjecali na zajednice koje služe.",
+      "radionice": ["Umjetnost prokrastinacije", "Gradnja kule od karata"]
     }
   ],
   "tezine": [
