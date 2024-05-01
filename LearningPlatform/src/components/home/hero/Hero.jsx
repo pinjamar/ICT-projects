@@ -1,4 +1,5 @@
 import './hero.css';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
@@ -13,14 +14,18 @@ const Hero = () => {
               Konsonantija, žive nevidljivi tekstovi i sveznajući profesori.
             </p>
             <div className="button">
-              <button className="primary-btn">
-                UPOZNAJTE PROFESORE{' '}
-                <i className="fa fa-long-arrow-alt-right"></i>
-              </button>
-              <button>
-                POGLEDAJTE RADIONICE{' '}
-                <i className="fa fa-long-arrow-alt-right"></i>
-              </button>
+              <Link to="/predavaci">
+                <button className="primary-btn">
+                  UPOZNAJTE PROFESORE{' '}
+                  <i className="fa fa-long-arrow-alt-right"></i>
+                </button>
+              </Link>
+              <Link to="/radionice">
+                <button>
+                  POGLEDAJTE RADIONICE{' '}
+                  <i className="fa fa-long-arrow-alt-right"></i>
+                </button>
+              </Link>
             </div>
           </div>
         </div>

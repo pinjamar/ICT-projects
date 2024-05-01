@@ -1,8 +1,11 @@
+/* eslint-disable react/jsx-key */
 /* eslint-disable react/prop-types */
 import PropTypes from 'prop-types'; // ES6
+import { Fragment } from 'react';
 
 const TeacherCard = (props) => {
   const { cover, ime, biografija, organizacija, tema } = props.teacher;
+
   return (
     <div className="items shadow">
       <div className="img">
@@ -17,14 +20,24 @@ const TeacherCard = (props) => {
       <div className="details">
         <h2>{ime}</h2>
         <p>{biografija}</p>
-        <h5>Organizacija: {organizacija}</h5>
-        <h6>Teme: {tema}</h6>
-        {tema.map((item, idx) => (
-          <p key={idx}>{item}</p>
-        ))}
+        <p className="teacher-organization">
+          <span className="organization-title">Organizacija:</span>{' '}
+          {organizacija}
+        </p>
+        <div className="fragment">
+          <p className="themes">Teme:</p>
+          {tema.map((item, idx) => (
+            <Fragment>
+              <p key={idx}>{item}</p>
+              {idx !== tema.length - 1 && <span>, </span>}
+            </Fragment>
+          ))}
+        </div>
       </div>
-      <button>Pregledaj radionice</button>
-      <button className="admin-button edit-teacher">Uredi</button>
+      <div className="teacher-buttons">
+        <button className="teacher-courses">Pregledaj radionice</button>
+        <button className="edit-teacher">Uredi</button>
+      </div>
     </div>
   );
 };

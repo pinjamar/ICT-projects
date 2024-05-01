@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import './header.css';
+import '../header.css';
 
-const AdminHeader = () => {
+const AdminHeaderCourse = () => {
   return (
     <div className="admin-header">
       <ul>
@@ -15,9 +15,9 @@ const AdminHeader = () => {
           <Link to="/admin/predavaci">Predavači</Link>
         </li>
       </ul>
-      <button className="admin-header-button">+Dodaj</button>
+      <button className="admin-btn">+Dodaj novog predavača</button>
     </div>
   );
 };
 
-export default AdminHeader;
+export default AdminHeaderCourse;

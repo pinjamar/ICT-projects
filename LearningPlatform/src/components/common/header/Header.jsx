@@ -5,7 +5,11 @@ import './header.css';
 
 const Header = () => {
   const [click, setClick] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
 
+  const handleToggleAdmin = () => {
+    setIsAdmin(!isAdmin);
+  };
   return (
     <>
       <Head />
@@ -28,6 +32,17 @@ const Header = () => {
               <Link to="/admin">Administracija</Link>
             </li>
           </ul>
+          <div className="admin-toggle-container">
+            <label className="switch">
+              <input
+                type="checkbox"
+                checked={isAdmin}
+                onChange={handleToggleAdmin}
+              />
+              <span className="slider round"></span>
+            </label>
+            <p className="admin-text">{isAdmin ? 'Admin' : 'User'}</p>
+          </div>
           <div className="start">
             <div className="button">STEKNITE CERTIFIKAT</div>
           </div>

@@ -7,6 +7,7 @@
   background-color: #fff;
   padding: 30px;
   text-align: center;
+  border-radius: 15px;
 }
 
 .coursesCard img {
@@ -33,11 +34,7 @@
   font-weight: 500;
   font-size: 14px;
 }
-.coursesCard .price {
-  margin: 30px 0;
-  background-color: #f8f8f8;
-  padding: 10px;
-}
+
 .coursesCard h3 {
   font-weight: 500;
   color: #1eb2a6;
@@ -46,6 +43,13 @@
 /*-------------buttons---------*/
 .courses-buttons {
   margin: 20px;
+}
+
+.add-course {
+  display: flex;
+  margin: 0px 70px 30px auto;
+  border: 2px solid #d2e23d;
+  color: rgb(212, 197, 62);
 }
 .course-btn-apply {
   margin: 0;
@@ -65,7 +69,8 @@
   transition: 0.5s;
   color: rgb(212, 197, 62);
 }
-.course-btn-edit:hover {
+.course-btn-edit:hover,
+.add-course:hover {
   background-color: #d8d787;
   color: #fff;
 }

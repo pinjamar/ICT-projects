@@ -39,7 +39,7 @@ const Workshops = () => {
   useEffect(doFilter, [themeFilter, difFilter]);
   return (
     <section className="course padding">
-      <button>+ Dodaj novu radionicu</button>
+      <button className="add-course">+ Dodaj novu radionicu</button>
       <div className="courses-page">
         <div className="filters">
           <ThemeFilter onThemeChange={onThemeChange} />

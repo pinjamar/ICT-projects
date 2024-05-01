@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import data from '../../../data.json';
-import AdminHeader from '../common/header/AdminHeader';
+import AdminHeaderCourse from '../common/header/adminHeaders/AdminHeaderCourse';
 import './admin.css';
 
 function Admin() {
@@ -10,16 +10,16 @@ function Admin() {
     <div key={radionica.id}>
       <table className="course-table-admin">
         <td>{radionica.ime}</td>
-        <td>{radionica.broj_prijava}</td>
+        <td>Prijave ({radionica.broj_prijava})</td>
         <td>{radionica.datum}</td>
-        <button>Uredi</button>
-        <button>Izbriši</button>
+        <button className="edit-btn">Uredi</button>
+        <button className="delete-btn">Izbriši</button>
       </table>
     </div>
   ));
   return (
     <div className="admin-radionice">
-      <AdminHeader />
+      <AdminHeaderCourse />
       <p>{mapiraneRadionice}</p>
     </div>
   );

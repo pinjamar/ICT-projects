@@ -4,6 +4,7 @@
 
 .team .items {
   transition: 0.5s;
+  border-radius: 15px;
 }
 .team .img {
   position: relative;
@@ -11,6 +12,7 @@
 .team img {
   width: 100%;
   height: 100%;
+  border-radius: 15px 15px 0 0;
 }
 .overlay {
   position: absolute;
@@ -70,4 +72,65 @@
 .filters label,
 h1 {
   padding: 10px;
+}
+
+.teacher-organization {
+  text-align: left;
+  margin-left: 5px;
+}
+
+.organization-title {
+  font-weight: bolder;
+  font-size: 16px;
+}
+
+.themes {
+  margin: 0px 5px;
+  font-weight: bolder;
+  font-size: 16px;
+}
+
+.fragment {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.teacher-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+/*---BUTTONS---*/
+.add-teacher {
+  display: flex;
+  margin: 0px 70px 30px auto;
+  border: 2px solid #d2e23d;
+  color: rgb(212, 197, 62);
+}
+
+.edit-teacher {
+  margin-left: 20px;
+  margin-top: 0;
+  box-shadow: none;
+  border: 2px solid #d2e23d;
+  transition: 0.5s;
+  color: rgb(212, 197, 62);
+}
+
+.teacher-courses {
+  border: 2px solid #3de23d;
+  margin-top: 0;
+}
+
+.teacher-courses:hover {
+  background-color: #9bd888;
+  color: #fff;
+}
+
+.edit-teacher:hover,
+.add-teacher:hover {
+  background-color: #d8d787;
+  color: #fff;
 }

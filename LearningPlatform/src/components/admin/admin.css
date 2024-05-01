@@ -7,4 +7,39 @@ td {
 
 button {
   margin-left: 20px;
+  margin-top: 0;
+}
+
+.edit-btn {
+  margin-left: 20px;
+  box-shadow: none;
+  border: 2px solid #d2e23d;
+  transition: 0.5s;
+  color: rgb(212, 197, 62);
+}
+
+.edit-btn:hover {
+  background-color: #d8d787;
+  color: #fff;
+}
+
+.delete-btn {
+  margin-left: 20px;
+  box-shadow: none;
+  border: 2px solid #e2a03d;
+  transition: 0.5s;
+  color: rgb(212, 122, 62);
+}
+
+.delete-btn:hover {
+  background-color: #d38a6d;
+  color: #fff;
+}
+
+.course-table-admin,
+.org-table-admin,
+.teacher-table-admin {
+  border: 1px solid green;
+  padding: 10px;
+  margin-top: 8px;
 }

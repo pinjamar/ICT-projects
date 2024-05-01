@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import data from '../../../data.json';
-import AdminHeader from '../common/header/AdminHeader';
+import AdminHeaderTeacher from '../common/header/adminHeaders/AdminHeaderTeacher';
 import './admin.css';
 
 function AdminTeachers() {
@@ -11,14 +11,14 @@ function AdminTeachers() {
       <table className="teacher-table-admin">
         <td>{predavac.ime}</td>
         <td>{predavac.organizacija}</td>
-        <button>Uredi</button>
-        <button>Izbriši</button>
+        <button className="edit-btn">Uredi</button>
+        <button className="delete-btn">Izbriši</button>
       </table>
     </div>
   ));
   return (
     <div className="admin-radionice">
-      <AdminHeader />
+      <AdminHeaderTeacher />
       {mapiraniPredavaci}
     </div>
   );
