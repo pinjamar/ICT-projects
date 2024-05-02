@@ -19,57 +19,51 @@ function NewTeacher() {
   }
 
   return (
-    <form onSubmit={sendData} className="form">
-      <h3>Dodaj novog predavaca</h3>
-      <div className="form-element">
-        <label>
-          Ime:
+    <form onSubmit={sendData} className="teacher-form">
+      <h1>Dodaj novog predavača</h1>
+      <div className="form-name-org">
+        <div className="form-element teacher-name">
           <input
             type="text"
             name="ime"
             value={teacherData.ime}
             onChange={changeData}
             required
+            placeholder="Ime..."
           />
-        </label>
-      </div>
-      <div className="form-element">
-        <label>
-          Biografija:
+        </div>
+        <div className="form-element teacher-org">
           <input
             type="text"
-            name="biografija"
-            value={teacherData.biografija}
-            onChange={changeData}
-            required
-          />
-        </label>
-      </div>
-      <div className="form-element">
-        <label>
-          Organizacija:
-          <input
-            type="text"
-            name="organizacija"
+            name="org"
             value={teacherData.organizacija}
             onChange={changeData}
             required
+            placeholder="Organizacija..."
           />
-        </label>
+        </div>
       </div>
       <div className="form-element">
-        <label>
-          Tema:
-          <input
-            type="text"
-            name="tema"
-            value={teacherData.tema}
-            onChange={changeData}
-            required
-          />
-        </label>
+        <textarea
+          type="text"
+          name="biografija"
+          value={teacherData.biografija}
+          onChange={changeData}
+          required
+          placeholder="Biografija..."
+        />
       </div>
-      <button type="submit" className="submit-button">
+      <div className="form-element">
+        <input
+          type="text"
+          name="tema"
+          value={teacherData.tema}
+          onChange={changeData}
+          required
+          placeholder="Tema.."
+        />
+      </div>
+      <button type="submit" className="submit-teacher">
         Spremi ✓
       </button>
     </form>

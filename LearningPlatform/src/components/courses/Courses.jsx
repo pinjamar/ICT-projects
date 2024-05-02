@@ -2,10 +2,12 @@ import { useEffect } from 'react';
 import CourseCard from './CourseCard';
 import ThemeFilter from '../common/filters/ThemeFilter';
 import DifficultyFilter from '../common/filters/DifficultyFilter';
+import { Link } from 'react-router-dom';
 import './courses.css';
 
 import { radionice } from '../../../data';
 import { useState } from 'react';
+import NewCourse from '../utils/NewCourse';
 
 const Workshops = () => {
   const [courses, setCourses] = useState(radionice);
@@ -39,7 +41,9 @@ const Workshops = () => {
   useEffect(doFilter, [themeFilter, difFilter]);
   return (
     <section className="course padding">
+      {/* <Link to="/radionice/1"> */}
       <button className="add-course">+ Dodaj novu radionicu</button>
+      {/* </Link> */}
       <div className="courses-page">
         <div className="filters">
           <ThemeFilter onThemeChange={onThemeChange} />
@@ -50,6 +54,9 @@ const Workshops = () => {
             <CourseCard key={item.id} course={item} />
           ))}
         </div>
+      </div>
+      <div>
+        <NewCourse />
       </div>
     </section>
   );

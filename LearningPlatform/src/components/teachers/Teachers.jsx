@@ -3,6 +3,8 @@ import TeacherCard from './TeacherCard';
 import ThemeFilter from '../common/filters/ThemeFilter';
 import OrganizationFilter from '../common/filters/OrganizationFilter';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import NewTeacher from '../utils/NewTeacher';
 import './teachers.css';
 
 import { predavaci } from '../../../data';
@@ -43,9 +45,11 @@ const Team = () => {
 
   return (
     <section className="team padding">
+      {/* <Link to="/predavaci/1"> */}
       <button className="admin-button add-teacher">
         + Dodaj novog predavaca
       </button>
+      {/* </Link> */}
       <div className="teachers-page">
         <div className="filters">
           <ThemeFilter onThemeChange={onThemeChange} />
@@ -56,6 +60,9 @@ const Team = () => {
             <TeacherCard key={item.id} teacher={item} />
           ))}
         </div>
+      </div>
+      <div>
+        <NewTeacher />
       </div>
     </section>
   );

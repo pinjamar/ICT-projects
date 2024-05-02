@@ -134,3 +134,62 @@ h1 {
   background-color: #d8d787;
   color: #fff;
 }
+
+/*--------------form--------------*/
+
+.teacher-form {
+  margin: auto;
+  background-color: #dedede;
+  width: 40vw;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.form-name-org {
+  display: flex;
+  justify-content: space-between;
+}
+
+.teacher-name,
+.teacher-org {
+  width: 40%;
+}
+
+input[name='ime'],
+input[name='org'] {
+  width: 100%;
+}
+
+input {
+  border: 1px solid #27750f;
+  border-radius: 10px;
+  padding: 0.3em;
+}
+
+textarea {
+  width: 50%;
+  height: 100px;
+  border: 1px solid #27750f;
+  border-radius: 10px;
+  padding: 0.3em;
+}
+
+input[name='tema'] {
+  width: 40%;
+}
+
+.form-element {
+  padding: 0.7em;
+  font-weight: bold;
+  text-align: left;
+  margin: 10px;
+}
+
+.submit-teacher {
+  width: 20%;
+  align-self: center;
+  margin-bottom: 20px;
+}

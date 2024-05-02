@@ -21,81 +21,75 @@ function NewCourse() {
   }
 
   return (
-    <form onSubmit={sendData} className="form">
-      <h3>Dodaj novu radionicu</h3>
-      <div className="form-element">
-        <label>
-          Ime:
-          <input
-            type="text"
-            name="ime"
-            value={courseData.ime}
-            onChange={changeData}
-            required
-          />
-        </label>
+    <form onSubmit={sendData} className="course-form">
+      <h1>Dodaj novu radionicu</h1>
+      <div className="course-form-one">
+        <div className="form-name-date">
+          <div className="form-element">
+            <input
+              type="text"
+              name="ime"
+              value={courseData.ime}
+              onChange={changeData}
+              required
+              placeholder="Ime radionice..."
+            />
+          </div>
+          <div className="form-element">
+            <input
+              type="text"
+              name="datum"
+              value={courseData.datum}
+              onChange={changeData}
+              required
+              placeholder="Datum održavanja..."
+            />
+          </div>
+        </div>
+        <div>
+          <div className="form-element">
+            <input
+              type="text"
+              name="tema"
+              value={courseData.tema}
+              onChange={changeData}
+              required
+              placeholder="Tema"
+            />
+          </div>
+          <div className="form-element">
+            <input
+              type="text"
+              name="tezina"
+              value={courseData.tezina}
+              onChange={changeData}
+              required
+              placeholder="Tezina"
+            />
+          </div>
+        </div>
       </div>
       <div className="form-element">
-        <label>
-          Datum:
-          <input
-            type="text"
-            name="datum"
-            value={courseData.datum}
-            onChange={changeData}
-            required
-          />
-        </label>
+        <textarea
+          type="text"
+          name="opis"
+          value={courseData.opis}
+          onChange={changeData}
+          required
+          placeholder="Opis radionice..."
+        />
       </div>
       <div className="form-element">
-        <label>
-          Opis:
-          <input
-            type="text"
-            name="opis"
-            value={courseData.opis}
-            onChange={changeData}
-            required
-          />
-        </label>
+        <input
+          type="text"
+          name="predavac"
+          value={courseData.predavac}
+          onChange={changeData}
+          required
+          placeholder="Predavač..."
+        />
       </div>
-      <div className="form-element">
-        <label>
-          Boja:
-          <input
-            type="text"
-            name="predavac"
-            value={courseData.predavac}
-            onChange={changeData}
-            required
-          />
-        </label>
-      </div>
-      <div className="form-element">
-        <label>
-          Tema:
-          <input
-            type="text"
-            name="tema"
-            value={courseData.tema}
-            onChange={changeData}
-            required
-          />
-        </label>
-      </div>
-      <div className="form-element">
-        <label>
-          Tezina:
-          <input
-            type="text"
-            name="tezina"
-            value={courseData.tezina}
-            onChange={changeData}
-            required
-          />
-        </label>
-      </div>
-      <button type="submit" className="submit-button">
+      <button type="submit" className="submit-course">
         Spremi ✓
       </button>
     </form>

@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import data from '../../../data.json';
 import AdminHeaderCourse from '../common/header/adminHeaders/AdminHeaderCourse';
+import NewOrg from '../utils/NewOrg';
 import './admin.css';
 
 function AdminCourses() {
@@ -21,6 +22,7 @@ function AdminCourses() {
     <div className="admin-radionice">
       <AdminHeaderCourse />
       <p>{mapiraneRadionice}</p>
+      <NewOrg />
     </div>
   );
 }
