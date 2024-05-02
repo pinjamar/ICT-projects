@@ -12,7 +12,6 @@ import { useState } from 'react';
 
 const Team = () => {
   const [teachers, setTeachers] = useState(predavaci);
-
   const [themeFilter, setThemeFilter] = useState(null);
   const [orgFilter, setOrgFilter] = useState(null);
 
@@ -45,11 +44,9 @@ const Team = () => {
 
   return (
     <section className="team padding">
-      {/* <Link to="/predavaci/1"> */}
       <button className="admin-button add-teacher">
-        + Dodaj novog predavaca
+        <NewTeacher className="admin-button add-teacher" />
       </button>
-      {/* </Link> */}
       <div className="teachers-page">
         <div className="filters">
           <ThemeFilter onThemeChange={onThemeChange} />
