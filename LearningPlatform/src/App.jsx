@@ -8,7 +8,7 @@ import Admin from './components/admin/AdminCourses';
 import AdminOrganizations from './components/admin/AdminOrganizations';
 import AdminTeachers from './components/admin/AdminTeachers';
 
-import { predavaci, radionice } from '../data';
+import { predavaci, radionice, organizacije } from '../data';
 
 import GenericService from './components/crud/GenericService';
 
@@ -23,10 +23,18 @@ const seedService = (serviceName, data) => {
   }
 };
 
+<<<<<<< Updated upstream
 const Seed = () => {
   seedService('teachers', predavaci);
   seedService('courses', radionice);
 };
+=======
+const Seed = () =>  {
+  seedService("teachers", predavaci);
+  seedService("courses", radionice);
+  seedService("orgs", organizacije);
+}
+>>>>>>> Stashed changes
 
 const App = () => {
   Seed()

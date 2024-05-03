@@ -16,9 +16,7 @@ const AdminHeaderCourse = () => {
           <Link to="/admin/predavaci">Predavači</Link>
         </li>
       </ul>
-      <button className="admin-btn">
-        <NewTeacher />
-      </button>
+      <NewTeacher />
     </div>
   );
 };

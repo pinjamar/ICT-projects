@@ -15,7 +15,7 @@ function AdminTeachers() {
   }
 
   const deleteTeacher = (id) => {
-    
+
   }
 
   const mapiraniPredavaci = predavaci.map((predavac) => (

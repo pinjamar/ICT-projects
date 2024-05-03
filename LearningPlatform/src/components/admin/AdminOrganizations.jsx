@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
-import { useState } from 'react';
 import AdminHeaderOrg from '../common/header/adminHeaders/AdminHeaderOrg';
-import EditOrg from '../utils/EditOrg';
 import { useOrgs } from '../crud/serviceHooks';
+import EditOrg from '../utils/EditOrg';
+import { useState } from 'react';
 import './admin.css';
 
 function AdminOrganization() {
@@ -15,10 +15,7 @@ function AdminOrganization() {
   };
 
   const deleteOrg = (id) => {
-    const updatedOrgs = organizacije.filter(
-      (organizacija) => organizacija.id !== id
-    );
-    setOrganizacije(updatedOrgs);
+    orgsService.delete(id)
   };
 
   const mapiraneOrganizacije = organizacije.map((organizacija) => (
