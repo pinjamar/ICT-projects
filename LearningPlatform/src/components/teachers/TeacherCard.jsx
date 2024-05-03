@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import EditTeacher from '../utils/EditTeacher';
 
 const TeacherCard = (props) => {
-  const { cover, ime, biografija, organizacija, tema } = props.teacher;
+  const { id, cover, ime, biografija, organizacija, tema } = props.teacher;
 
   return (
     <div className="items shadow">

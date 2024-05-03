@@ -14,6 +14,11 @@ function AdminCourses() {
     setRadionice(radioniceService.getAll());
   };
 
+  const deleteCourse = (id) => {
+    const updatedCourses = radionice.filter((radionica) => radionica.id !== id);
+    setRadionice(updatedCourses);
+  };
+
   const mapiraneRadionice = radionice.map((radionica) => (
     <div key={radionica.id}>
       <table className="course-table-admin">
@@ -23,7 +28,12 @@ function AdminCourses() {
         <button className="edit-btn">
           <EditCourse course={radionica} onDone={reload} />
         </button>
-        <button className="delete-btn">Izbriši</button>
+        <button
+          className="delete-btn"
+          onClick={() => deleteCourse(radionica.id)}
+        >
+          Izbriši
+        </button>
       </table>
     </div>
   ));

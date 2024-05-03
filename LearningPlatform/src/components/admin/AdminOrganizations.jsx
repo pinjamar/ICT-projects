@@ -14,6 +14,13 @@ function AdminOrganization() {
     setOrganizacije(orgsService.getAll());
   };
 
+  const deleteOrg = (id) => {
+    const updatedOrgs = organizacije.filter(
+      (organizacija) => organizacija.id !== id
+    );
+    setOrganizacije(updatedOrgs);
+  };
+
   const mapiraneOrganizacije = organizacije.map((organizacija) => (
     <div key={organizacija.id}>
       <table className="org-table-admin">
@@ -21,7 +28,12 @@ function AdminOrganization() {
         <button className="edit-btn">
           <EditOrg orgs={organizacija} onDone={reload} />
         </button>
-        <button className="delete-btn">Izbriši</button>
+        <button
+          className="delete-btn"
+          onClick={() => deleteOrg(organizacija.id)}
+        >
+          Izbriši
+        </button>
       </table>
     </div>
   ));
