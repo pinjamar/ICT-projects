@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import './modal.css';
 
-function CourseApply() {
-  const [studentData, setstudentData] = useState({
+function ThankYou() {
+  const [teacherData, setTeacherData] = useState({
     ime: '',
-    email: '',
-    razlog: '',
+    biografija: '',
+    organizacija: '',
+    tema: '',
   });
 
   const [formVisible, setFormVisible] = useState(false);
@@ -19,12 +20,12 @@ function CourseApply() {
 
   const sendData = (event) => {
     event.preventDefault();
-    console.log(studentData);
+    console.log(teacherData);
   };
 
   function changeData(event) {
-    const { ime, value } = event.target;
-    setstudentData({ ...studentData, [ime]: value });
+    const { name, value } = event.target;
+    setTeacherData({ ...teacherData, [name]: value });
   }
 
   return (
@@ -40,31 +41,41 @@ function CourseApply() {
                   <input
                     type="text"
                     name="ime"
-                    value={studentData.ime}
+                    value={teacherData.ime}
                     onChange={changeData}
                     required
-                    placeholder="Puno ime..."
+                    placeholder="Ime..."
                   />
                 </div>
                 <div className="form-element teacher-org">
                   <input
                     type="text"
-                    name="email"
-                    value={studentData.email}
+                    name="org"
+                    value={teacherData.organizacija}
                     onChange={changeData}
                     required
-                    placeholder="Email..."
+                    placeholder="Organizacija..."
                   />
                 </div>
               </div>
               <div className="form-element">
                 <textarea
                   type="text"
-                  name="razlog"
-                  value={studentData.razlog}
+                  name="biografija"
+                  value={teacherData.biografija}
                   onChange={changeData}
                   required
-                  placeholder="Razlog prijave..."
+                  placeholder="Biografija..."
+                />
+              </div>
+              <div className="form-element">
+                <input
+                  type="text"
+                  name="tema"
+                  value={teacherData.tema}
+                  onChange={changeData}
+                  required
+                  placeholder="Tema.."
                 />
               </div>
               <div>
@@ -76,7 +87,7 @@ function CourseApply() {
                   onClick={handleCloseClick}
                   className="close-button"
                 >
-                  &#10006;
+                  Zatvori
                 </button>
               </div>
             </form>
@@ -87,4 +98,4 @@ function CourseApply() {
   );
 }
 
-export default CourseApply;
+export default ThankYou;
