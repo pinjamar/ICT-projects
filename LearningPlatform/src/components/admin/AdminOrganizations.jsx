@@ -14,11 +14,15 @@ function AdminOrganization() {
     setOrganizacije(orgsService.getAll());
   };
 
+  // const deleteOrg = (id) => {
+  //   const updatedOrgs = organizacije.filter(
+  //     (organizacija) => organizacija.id !== id
+  //   );
+  //   setOrganizacije(updatedOrgs);
+  // };
+
   const deleteOrg = (id) => {
-    const updatedOrgs = organizacije.filter(
-      (organizacija) => organizacija.id !== id
-    );
-    setOrganizacije(updatedOrgs);
+    orgsService.delete(id);
   };
 
   const mapiraneOrganizacije = organizacije.map((organizacija) => (

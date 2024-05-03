@@ -1,14 +1,17 @@
 import { useState } from 'react';
+import { useOrgs } from '../crud/serviceHooks';
 
 function NewTeacher() {
   const [teacherData, setTeacherData] = useState({
     ime: '',
     biografija: '',
-    organizacija: '',
+    organizacija: 1,
     tema: '',
   });
 
   const [formVisible, setFormVisible] = useState(false);
+  const orgService = useOrgs();
+  const orgs = orgService.getAll();
 
   const handleButtonClick = () => {
     setFormVisible(true);
@@ -20,6 +23,9 @@ function NewTeacher() {
   const sendData = (event) => {
     event.preventDefault();
     console.log(teacherData);
+    const organizacija = orgService.getSingle(teacherData.organizacija);
+    const toSave = { ...teacherData, organizacija: organizacija.ime };
+    console.log(toSave);
   };
 
   function changeData(event) {
@@ -47,14 +53,20 @@ function NewTeacher() {
                   />
                 </div>
                 <div className="form-element teacher-org">
-                  <input
-                    type="text"
-                    name="org"
-                    value={teacherData.organizacija}
+                  <select
+                    name="organizacija"
                     onChange={changeData}
                     required
                     placeholder="Organizacija..."
-                  />
+                  >
+                    {orgs.map((course) => {
+                      return (
+                        <option key={course.id} value={course.id}>
+                          {course.ime}
+                        </option>
+                      );
+                    })}
+                  </select>
                 </div>
               </div>
               <div className="form-element">
