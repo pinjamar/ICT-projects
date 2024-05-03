@@ -2,12 +2,10 @@
 import TeacherCard from './TeacherCard';
 import ThemeFilter from '../common/filters/ThemeFilter';
 import OrganizationFilter from '../common/filters/OrganizationFilter';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import NewTeacher from '../utils/NewTeacher';
-import './teachers.css';
-
-import { useState } from 'react';
 import { useTeachers } from '../crud/serviceHooks';
+import './teachers.css';
 
 const Team = () => {
   const teacherService = useTeachers()

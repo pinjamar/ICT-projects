@@ -1,13 +1,23 @@
 /* eslint-disable react/prop-types */
-import data from '../../../data.json';
-import { useParams, Link } from 'react-router-dom';
+import { useState } from 'react';
 import AdminHeaderCourse from '../common/header/adminHeaders/AdminHeaderCourse';
 import EditCourse from '../utils/EditCourse';
-import axios from 'axios';
+import { useCourses } from '../crud/serviceHooks';
 import './admin.css';
 
 function AdminCourses() {
-  const radionice = data.radionice;
+  const radioniceService = useCourses();
+
+  const [radionice, setRadionice] = useState(radioniceService.getAll());
+
+  const reload = () => {
+    setRadionice(radioniceService.getAll());
+  };
+
+  const deleteCourse = (id) => {
+    const updatedCourses = radionice.filter((radionica) => radionica.id !== id);
+    setRadionice(updatedCourses);
+  };
 
   const mapiraneRadionice = radionice.map((radionica) => (
     <div key={radionica.id}>
@@ -16,9 +26,12 @@ function AdminCourses() {
         <td>Prijave ({radionica.broj_prijava})</td>
         <td>{radionica.datum}</td>
         <button className="edit-btn">
-          <EditCourse />
+          <EditCourse course={radionica} onDone={reload} />
         </button>
-        <button className="delete-btn" onClick={() => handleDelete()}>
+        <button
+          className="delete-btn"
+          onClick={() => deleteCourse(radionica.id)}
+        >
           Izbriši
         </button>
       </table>

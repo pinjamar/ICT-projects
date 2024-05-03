@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useTeachers } from '../crud/serviceHooks';
-import PropTypes from "prop-types"
+import PropTypes from 'prop-types';
 
-function NewTeacher(props) {
-  const teacherService = useTeachers()
+function EditTeacher(props) {
+  const teacherService = useTeachers();
 
   const [teacherData, setTeacherData] = useState(props.teacher);
   const [formVisible, setFormVisible] = useState(false);
@@ -18,9 +18,9 @@ function NewTeacher(props) {
   const sendData = (event) => {
     event.preventDefault();
     console.log(teacherData);
-    teacherService.save(teacherData)
-    setFormVisible(false)
-    props.onDone()
+    teacherService.save(teacherData);
+    setFormVisible(false);
+    props.onDone();
   };
 
   function changeData(event) {
@@ -98,9 +98,9 @@ function NewTeacher(props) {
   );
 }
 
-NewTeacher.propTypes = {
+EditTeacher.propTypes = {
   teacher: PropTypes.any,
-  onDone: PropTypes.func
-}
+  onDone: PropTypes.func,
+};
 
-export default NewTeacher;
+export default EditTeacher;

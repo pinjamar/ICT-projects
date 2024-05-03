@@ -5,6 +5,7 @@ import CourseApply from '../common/modals/CourseApply';
 
 const CourseCard = (props) => {
   const { cover, ime, opis, predavac } = props.course;
+
   return (
     <div className="coursesCard">
       <div className="items">

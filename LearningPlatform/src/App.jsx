@@ -7,28 +7,26 @@ import Teachers from './components/teachers/Teachers';
 import Admin from './components/admin/AdminCourses';
 import AdminOrganizations from './components/admin/AdminOrganizations';
 import AdminTeachers from './components/admin/AdminTeachers';
-import NewTeacher from './components/utils/NewTeacher';
-import NewCourse from './components/utils/NewCourse';
 
 import { predavaci, radionice } from '../data';
 
 import GenericService from './components/crud/GenericService';
 
 const seedService = (serviceName, data) => {
-  const service  = new GenericService(serviceName)
+  const service = new GenericService(serviceName);
 
   if (!service.hasData()) {
-    data.forEach(element => {
-      delete element.id
-      service.save(element)
+    data.forEach((element) => {
+      delete element.id;
+      service.save(element);
     });
   }
-} 
+};
 
-const Seed = () =>  {
-  seedService("teachers", predavaci);
-  seedService("courses", radionice);
-}
+const Seed = () => {
+  seedService('teachers', predavaci);
+  seedService('courses', radionice);
+};
 
 const App = () => {
   Seed()

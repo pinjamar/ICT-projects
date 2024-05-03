@@ -14,15 +14,22 @@ function AdminTeachers() {
     setPredavaci(teacherService.getAll())
   }
 
+  const deleteTeacher = (id) => {
+    
+  }
+
   const mapiraniPredavaci = predavaci.map((predavac) => (
     <div key={predavac.id}>
       <table className="teacher-table-admin">
         <td>{predavac.ime}</td>
         <td>{predavac.organizacija}</td>
-        <button className="edit-btn">
-          <EditTeacher teacher={predavac} onDone={reload}/>
+        <EditTeacher teacher={predavac} onDone={reload} />
+        <button
+          className="delete-btn"
+          onClick={() => deleteTeacher(predavac.id)}
+        >
+          Izbriši
         </button>
-        <button className="delete-btn">Izbriši</button>
       </table>
     </div>
   ));

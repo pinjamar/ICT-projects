@@ -1,16 +1,13 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import CourseCard from './CourseCard';
 import ThemeFilter from '../common/filters/ThemeFilter';
 import DifficultyFilter from '../common/filters/DifficultyFilter';
 import NewCourse from '../utils/NewCourse';
-import './courses.css';
 import { useCourses } from '../crud/serviceHooks';
-
-
-import { useState } from 'react';
+import './courses.css';
 
 const Workshops = () => {
-  const courseService = useCourses()
+  const courseService = useCourses();
 
   const [courses, setCourses] = useState(courseService.getAll());
 
