@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-key */
 import PropTypes from 'prop-types'; // ES6
 import EditCourse from '../utils/EditCourse';
+import CourseApply from '../common/modals/CourseApply';
 
 const CourseCard = (props) => {
   const { cover, ime, opis, predavac } = props.course;
@@ -20,7 +21,9 @@ const CourseCard = (props) => {
               <h4>Predavač: {predavac}</h4>
             </div>
             <div className="courses-buttons">
-              <button className="course-btn-apply">Prijavi se!</button>
+              <button className="course-btn-apply">
+                <CourseApply />
+              </button>
               <button className="course-btn-edit">
                 <EditCourse />
               </button>
