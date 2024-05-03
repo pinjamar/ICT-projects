@@ -23,18 +23,11 @@ const seedService = (serviceName, data) => {
   }
 };
 
-<<<<<<< Updated upstream
-const Seed = () => {
-  seedService('teachers', predavaci);
-  seedService('courses', radionice);
-};
-=======
 const Seed = () =>  {
   seedService("teachers", predavaci);
   seedService("courses", radionice);
   seedService("orgs", organizacije);
 }
->>>>>>> Stashed changes
 
 const App = () => {
   Seed()
