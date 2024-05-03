@@ -2,7 +2,10 @@ import { Link } from 'react-router-dom';
 import NewTeacher from '../../../utils/NewTeacher';
 import '../header.css';
 
-const AdminHeaderCourse = () => {
+const AdminHeaderCourse = (props) => {
+
+  const { reload } = props
+
   return (
     <div className="admin-header">
       <ul>
@@ -16,7 +19,7 @@ const AdminHeaderCourse = () => {
           <Link to="/admin/predavaci">Predavači</Link>
         </li>
       </ul>
-      <NewTeacher />
+      <NewTeacher reload={reload} />
     </div>
   );
 };

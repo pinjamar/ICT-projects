@@ -15,16 +15,15 @@ function AdminOrganization() {
   };
 
   const deleteOrg = (id) => {
-    orgsService.delete(id)
+    orgsService.deleteId(id)
+    reload()
   };
 
   const mapiraneOrganizacije = organizacije.map((organizacija) => (
     <div key={organizacija.id}>
       <table className="org-table-admin">
         <td>{organizacija.ime}</td>
-        <button className="edit-btn">
-          <EditOrg orgs={organizacija} onDone={reload} />
-        </button>
+        <EditOrg orgs={organizacija} onDone={reload} />        
         <button
           className="delete-btn"
           onClick={() => deleteOrg(organizacija.id)}

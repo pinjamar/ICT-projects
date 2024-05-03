@@ -1,11 +1,15 @@
 /* eslint-disable react/jsx-key */
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import { useTeachers } from '../../crud/serviceHooks';
 
 const ThemeFilter = (props) => {
   const [selectedTheme, setselectedTheme] = useState('all');
 
   const { onThemeChange } = props;
+
+  const teacherService = useTeachers()
+  const themes = Array.from(new Set(teacherService.getAll().flatMap(it => it.tema)))
 
   const handleOptionChange = (event) => {
     let selectedValue = event.target.value;
@@ -27,33 +31,19 @@ const ThemeFilter = (props) => {
         />
         Svi
       </label>
-      <label>
-        <input
-          type="radio"
-          value="Znanost"
-          checked={selectedTheme === 'Znanost'}
-          onChange={handleOptionChange}
-        />
-        Znanost
-      </label>
-      <label>
-        <input
-          type="radio"
-          value="Magija"
-          checked={selectedTheme === 'Magija'}
-          onChange={handleOptionChange}
-        />
-        Magija
-      </label>
-      <label>
-        <input
-          type="radio"
-          value="Programiranje"
-          checked={selectedTheme === 'Programiranje'}
-          onChange={handleOptionChange}
-        />
-        Programiranje
-      </label>
+      {themes.map(it => {
+        return (
+          <label>
+          <input
+            type="radio"
+            value={it}
+            checked={selectedTheme === it}
+            onChange={handleOptionChange}
+          />
+          {it}
+        </label>
+        )
+      })}
     </>
   );
 };

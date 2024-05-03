@@ -28,7 +28,9 @@ function NewOrg() {
 
   return (
     <>
-      <div onClick={handleButtonClick}>+Dodaj novu organizaciju</div>
+      <button onClick={handleButtonClick} className="admin-btn">
+        +Dodaj novu organizaciju
+      </button>
       {formVisible && (
         <div className="modal">
           <div className="modal-content">
@@ -37,7 +39,7 @@ function NewOrg() {
               <div className="form-element">
                 <input
                   type="text"
-                  name="orgName"
+                  name="ime"
                   value={orgData.ime}
                   onChange={changeData}
                   required
@@ -47,7 +49,7 @@ function NewOrg() {
               <div className="form-element">
                 <input
                   type="text"
-                  name="courses"
+                  name="radionice"
                   value={orgData.radionice}
                   onChange={changeData}
                   required
@@ -57,7 +59,7 @@ function NewOrg() {
               <div className="form-element">
                 <textarea
                   type="text"
-                  name="orgDesc"
+                  name="opis"
                   value={orgData.opis}
                   onChange={changeData}
                   required

@@ -25,9 +25,7 @@ function AdminCourses() {
         <td>{radionica.ime}</td>
         <td>Prijave ({radionica.broj_prijava})</td>
         <td>{radionica.datum}</td>
-        <button className="edit-btn">
-          <EditCourse course={radionica} onDone={reload} />
-        </button>
+        <EditCourse course={radionica} onDone={reload} />
         <button
           className="delete-btn"
           onClick={() => deleteCourse(radionica.id)}

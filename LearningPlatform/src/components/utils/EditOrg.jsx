@@ -30,7 +30,9 @@ function EditOrg(props) {
 
   return (
     <>
-      <div onClick={handleButtonClick}>Uredi</div>
+      <button onClick={handleButtonClick} className="edit-btn">
+        Uredi
+      </button>
       {formVisible && (
         <div className="modal">
           <div className="modal-content">

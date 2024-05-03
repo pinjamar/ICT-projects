@@ -63,7 +63,7 @@ class GenericService {
         this.persist();
     }
 
-    delete(object) {
+    deleteObject(object) {
         const db = this.storageObject;
 
         if (!object["id"] || object["id"] <= 0) {
@@ -77,6 +77,15 @@ class GenericService {
         this.persist()
     }
 
+    deleteId(id) {
+        const db = this.storageObject;
+        
+        db.items = db.items.filter(it => it != id)
+        delete db.itemDictionary[id]
+
+        this.storageObject = db;
+        this.persist()
+    }
 
     load() {
         const stringData = localStorage.getItem(this.storageObject.key)

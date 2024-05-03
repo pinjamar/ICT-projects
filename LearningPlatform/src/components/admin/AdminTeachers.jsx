@@ -15,7 +15,8 @@ function AdminTeachers() {
   }
 
   const deleteTeacher = (id) => {
-
+    teacherService.deleteId(id)
+    reload()
   }
 
   const mapiraniPredavaci = predavaci.map((predavac) => (
@@ -35,7 +36,7 @@ function AdminTeachers() {
   ));
   return (
     <div className="admin-radionice">
-      <AdminHeaderTeacher />
+      <AdminHeaderTeacher reload={reload} />
       {mapiraniPredavaci}
     </div>
   );
