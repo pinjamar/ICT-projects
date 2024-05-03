@@ -2,6 +2,8 @@
 /* eslint-disable react/prop-types */
 import PropTypes from 'prop-types'; // ES6
 import { Fragment } from 'react';
+import { Link } from 'react-router-dom';
+import EditTeacher from '../utils/EditTeacher';
 
 const TeacherCard = (props) => {
   const { cover, ime, biografija, organizacija, tema } = props.teacher;
@@ -35,8 +37,12 @@ const TeacherCard = (props) => {
         </div>
       </div>
       <div className="teacher-buttons">
-        <button className="teacher-courses">Pregledaj radionice</button>
-        <button className="edit-teacher">Uredi</button>
+        <Link to="/radionice">
+          <button className="teacher-courses">Pregledaj radionice</button>
+        </Link>
+        <button className="edit-teacher">
+          <EditTeacher />
+        </button>
       </div>
     </div>
   );

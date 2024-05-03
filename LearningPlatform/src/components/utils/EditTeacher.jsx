@@ -1,62 +1,100 @@
-/* eslint-disable react/prop-types */
-import { useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useState } from 'react';
 
-const EditCourse = ({
-  predavaci,
-  handleEdit,
-  editBiografija,
-  setEditBiografija,
-  editIme,
-  setEditIme,
-}) => {
-  const { id } = useParams();
-  const predavac = predavaci.find((predavac) => predavac.id.toString() === id);
+function NewTeacher() {
+  const [teacherData, setTeacherData] = useState({
+    ime: '',
+    biografija: '',
+    organizacija: '',
+    tema: '',
+  });
 
-  useEffect(() => {
-    if (predavac) {
-      setEditIme(predavac.ime);
-      setEditBiografija(predavac.biografija);
-    }
-  }, [predavac, setEditIme, setEditBiografija]);
+  const [formVisible, setFormVisible] = useState(false);
+
+  const handleButtonClick = () => {
+    setFormVisible(true);
+  };
+  const handleCloseClick = () => {
+    setFormVisible(false);
+  };
+
+  const sendData = (event) => {
+    event.preventDefault();
+    console.log(teacherData);
+  };
+
+  function changeData(event) {
+    const { name, value } = event.target;
+    setTeacherData({ ...teacherData, [name]: value });
+  }
 
   return (
-    <main className="NewTeacher">
-      {editIme && (
-        <>
-          <h2>Editiraj Radionicu</h2>
-          <form className="newTeacherForm" onSubmit={(e) => e.preventDefault()}>
-            <label htmlFor="predavacIme">Ime:</label>
-            <input
-              id="predavacIme"
-              type="text"
-              required
-              value={editIme}
-              onChange={(e) => setEditIme(e.target.value)}
-            />
-            <label htmlFor="predavacBiografija">Biografija:</label>
-            <textarea
-              id="predavacBiografija"
-              required
-              value={editBiografija}
-              onChange={(e) => setEditBiografija(e.target.value)}
-            />
-            <button type="submit" onClick={() => handleEdit(predavac.id)}>
-              Submit
-            </button>
-          </form>
-        </>
+    <>
+      <div onClick={handleButtonClick}>Uredi</div>
+      {formVisible && (
+        <div className="modal">
+          <div className="modal-content">
+            <form onSubmit={sendData} className="teacher-form">
+              <h1 className="form-title">Uredi predavača</h1>
+              <div className="form-name-org">
+                <div className="form-element teacher-name">
+                  <input
+                    type="text"
+                    name="ime"
+                    value={teacherData.ime}
+                    onChange={changeData}
+                    required
+                    placeholder="Ime..."
+                  />
+                </div>
+                <div className="form-element teacher-org">
+                  <input
+                    type="text"
+                    name="org"
+                    value={teacherData.organizacija}
+                    onChange={changeData}
+                    required
+                    placeholder="Organizacija..."
+                  />
+                </div>
+              </div>
+              <div className="form-element">
+                <textarea
+                  type="text"
+                  name="biografija"
+                  value={teacherData.biografija}
+                  onChange={changeData}
+                  required
+                  placeholder="Biografija..."
+                />
+              </div>
+              <div className="form-element">
+                <input
+                  type="text"
+                  name="tema"
+                  value={teacherData.tema}
+                  onChange={changeData}
+                  required
+                  placeholder="Tema.."
+                />
+              </div>
+              <div>
+                <button type="submit" className="submit-teacher">
+                  Spremi ✓
+                </button>
+                <button
+                  type="button"
+                  onClick={handleCloseClick}
+                  className="close-button"
+                >
+                  Zatvori
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
       )}
-      {!editIme && (
-        <>
-          <h2>Post Not Found</h2>
-          <p>
-            <Link to="/">Otidji na naslovnicu</Link>
-          </p>
-        </>
-      )}
-    </main>
+    </>
   );
-};
+}
 
-export default EditCourse;
+export default NewTeacher;

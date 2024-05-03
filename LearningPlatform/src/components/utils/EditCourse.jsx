@@ -1,64 +1,126 @@
-/* eslint-disable react/prop-types */
-import { useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useState } from 'react';
 
-const EditCourse = ({
-  radionice,
-  handleEdit,
-  editOpis,
-  setEditOpis,
-  editIme,
-  setEditIme,
-}) => {
-  const { id } = useParams();
-  const radionica = radionice.find(
-    (radionica) => radionica.id.toString() === id
-  );
+function NewCourse() {
+  const [courseData, setCourseData] = useState({
+    ime: '',
+    opis: '',
+    predavac: '',
+    datum: '',
+    tema: '',
+    tezina: '',
+  });
 
-  useEffect(() => {
-    if (radionica) {
-      setEditIme(radionica.ime);
-      setEditOpis(radionica.opis);
-    }
-  }, [radionica, setEditIme, setEditOpis]);
+  const [formVisible, setFormVisible] = useState(false);
+
+  const handleButtonClick = () => {
+    setFormVisible(true);
+  };
+  const handleCloseClick = () => {
+    setFormVisible(false);
+  };
+
+  const sendData = (event) => {
+    event.preventDefault();
+    console.log(courseData);
+  };
+
+  function changeData(event) {
+    const { name, value } = event.target;
+    setCourseData({ ...courseData, [name]: value });
+  }
 
   return (
-    <main className="NewCourse">
-      {editIme && (
-        <>
-          <h2>Editiraj Radionicu</h2>
-          <form className="newCourseForm" onSubmit={(e) => e.preventDefault()}>
-            <label htmlFor="radionicaIme">Ime:</label>
-            <input
-              id="radionicaIme"
-              type="text"
-              required
-              value={editIme}
-              onChange={(e) => setEditIme(e.target.value)}
-            />
-            <label htmlFor="radionicaOpis">Opis:</label>
-            <textarea
-              id="radionicaOpis"
-              required
-              value={editOpis}
-              onChange={(e) => setEditOpis(e.target.value)}
-            />
-            <button type="submit" onClick={() => handleEdit(radionica.id)}>
-              Submit
-            </button>
-          </form>
-        </>
+    <>
+      <div onClick={handleButtonClick}>Uredi</div>
+      {formVisible && (
+        <div className="modal">
+          <div className="modal-content">
+            <form onSubmit={sendData} className="course-form">
+              <h1 className="course-title">Uredi radionicu</h1>
+              <div className="course-form-one">
+                <div className="form-name-date">
+                  <div className="form-element">
+                    <input
+                      type="text"
+                      name="ime"
+                      value={courseData.ime}
+                      onChange={changeData}
+                      required
+                      placeholder="Ime radionice..."
+                    />
+                  </div>
+                  <div className="form-element">
+                    <input
+                      type="text"
+                      name="datum"
+                      value={courseData.datum}
+                      onChange={changeData}
+                      required
+                      placeholder="Datum održavanja..."
+                    />
+                  </div>
+                </div>
+                <div>
+                  <div className="form-element">
+                    <input
+                      type="text"
+                      name="tema"
+                      value={courseData.tema}
+                      onChange={changeData}
+                      required
+                      placeholder="Tema"
+                    />
+                  </div>
+                  <div className="form-element">
+                    <input
+                      type="text"
+                      name="tezina"
+                      value={courseData.tezina}
+                      onChange={changeData}
+                      required
+                      placeholder="Tezina"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="form-element">
+                <textarea
+                  type="text"
+                  name="opis"
+                  value={courseData.opis}
+                  onChange={changeData}
+                  required
+                  placeholder="Opis radionice..."
+                />
+              </div>
+              <div className="form-element">
+                <input
+                  type="text"
+                  name="predavac"
+                  value={courseData.predavac}
+                  onChange={changeData}
+                  required
+                  placeholder="Predavač..."
+                />
+              </div>
+              <div>
+                <button type="submit" className="submit-course">
+                  Spremi ✓
+                </button>
+                <button
+                  type="button"
+                  onClick={handleCloseClick}
+                  className="close-button"
+                >
+                  Zatvori
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
       )}
-      {!editIme && (
-        <>
-          <h2>Radionica nije pronadjena</h2>
-          <p>
-            <Link to="/">Otidji na naslovnicu</Link>
-          </p>
-        </>
-      )}
-    </main>
+    </>
   );
-};
+}
 
-export default EditCourse;
+export default NewCourse;

@@ -1,64 +1,87 @@
-/* eslint-disable react/prop-types */
-import { useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useState } from 'react';
 
-const EditOrg = ({
-  organizacije,
-  handleEdit,
-  editOpis,
-  setEditOpis,
-  editIme,
-  setEditIme,
-}) => {
-  const { id } = useParams();
-  const organizacija = organizacije.find(
-    (organizacija) => organizacija.id.toString() === id
-  );
+function NewOrg() {
+  const [orgData, setOrgData] = useState({
+    ime: '',
+    opis: '',
+    radionice: '',
+  });
 
-  useEffect(() => {
-    if (organizacija) {
-      setEditIme(organizacija.ime);
-      setEditOpis(organizacija.opis);
-    }
-  }, [organizacija, setEditIme, setEditOpis]);
+  const [formVisible, setFormVisible] = useState(false);
+
+  const handleButtonClick = () => {
+    setFormVisible(true);
+  };
+  const handleCloseClick = () => {
+    setFormVisible(false);
+  };
+
+  const sendData = (event) => {
+    event.preventDefault();
+    console.log(orgData);
+  };
+
+  function changeData(event) {
+    const { name, value } = event.target;
+    setOrgData({ ...orgData, [name]: value });
+  }
 
   return (
-    <main className="NewOrg">
-      {editIme && (
-        <>
-          <h2>Editiraj Organizaciju</h2>
-          <form className="newOrgForm" onSubmit={(e) => e.preventDefault()}>
-            <label htmlFor="organizacijaIme">Ime:</label>
-            <input
-              id="organizacijaIme"
-              type="text"
-              required
-              value={editIme}
-              onChange={(e) => setEditIme(e.target.value)}
-            />
-            <label htmlFor="organizacijaOpis">Opis:</label>
-            <textarea
-              id="organizacijaOpis"
-              required
-              value={editOpis}
-              onChange={(e) => setEditOpis(e.target.value)}
-            />
-            <button type="submit" onClick={() => handleEdit(organizacija.id)}>
-              Submit
-            </button>
-          </form>
-        </>
+    <>
+      <div onClick={handleButtonClick}>Uredi</div>
+      {formVisible && (
+        <div className="modal">
+          <div className="modal-content">
+            <form onSubmit={sendData} className="org-form">
+              <h1>Uredi orgnaizaciju</h1>
+              <div className="form-element">
+                <input
+                  type="text"
+                  name="orgName"
+                  value={orgData.ime}
+                  onChange={changeData}
+                  required
+                  placeholder="Ime..."
+                />
+              </div>
+              <div className="form-element">
+                <input
+                  type="text"
+                  name="courses"
+                  value={orgData.radionice}
+                  onChange={changeData}
+                  required
+                  placeholder="Radionice..."
+                />
+              </div>
+              <div className="form-element">
+                <textarea
+                  type="text"
+                  name="orgDesc"
+                  value={orgData.opis}
+                  onChange={changeData}
+                  required
+                  placeholder="Opis..."
+                />
+              </div>
+              <div>
+                <button type="submit" className="submit-org">
+                  Spremi ✓
+                </button>
+                <button
+                  type="button"
+                  onClick={handleCloseClick}
+                  className="close-button"
+                >
+                  Zatvori
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
       )}
-      {!editIme && (
-        <>
-          <h2>Organizacija nije pronadjena</h2>
-          <p>
-            <Link to="/">Otidji na naslovnicu</Link>
-          </p>
-        </>
-      )}
-    </main>
+    </>
   );
-};
+}
 
-export default EditOrg;
+export default NewOrg;

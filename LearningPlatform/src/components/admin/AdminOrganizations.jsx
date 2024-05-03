@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import data from '../../../data.json';
 import AdminHeaderOrg from '../common/header/adminHeaders/AdminHeaderOrg';
+import EditOrg from '../utils/EditOrg';
 import './admin.css';
 
 function AdminOrganization() {
@@ -10,7 +11,9 @@ function AdminOrganization() {
     <div key={organizacija.id}>
       <table className="org-table-admin">
         <td>{organizacija.ime}</td>
-        <button className="edit-btn">Uredi</button>
+        <button className="edit-btn">
+          <EditOrg />
+        </button>
         <button className="delete-btn">Izbriši</button>
       </table>
     </div>

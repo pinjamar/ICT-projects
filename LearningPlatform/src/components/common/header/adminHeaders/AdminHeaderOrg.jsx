@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import NewOrg from '../../../utils/NewOrg';
 import '../header.css';
 
 const AdminHeaderCourse = () => {
@@ -15,7 +16,9 @@ const AdminHeaderCourse = () => {
           <Link to="/admin/predavaci">Predavači</Link>
         </li>
       </ul>
-      <button className="admin-btn">+Dodaj novu organizaciju</button>
+      <button className="admin-btn">
+        <NewOrg />
+      </button>
     </div>
   );
 };

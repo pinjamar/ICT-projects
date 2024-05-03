@@ -11,10 +11,10 @@ function NewTeacher() {
   const [formVisible, setFormVisible] = useState(false);
 
   const handleButtonClick = () => {
-    setFormVisible(true); // Set the form visibility to true when the button is clicked
+    setFormVisible(true);
   };
   const handleCloseClick = () => {
-    setFormVisible(false); // Set the form visibility to false when the close button is clicked
+    setFormVisible(false);
   };
 
   const sendData = (event) => {
