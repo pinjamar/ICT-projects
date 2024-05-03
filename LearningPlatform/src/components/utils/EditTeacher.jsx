@@ -1,13 +1,11 @@
 import { useState } from 'react';
+import { useTeachers } from '../crud/serviceHooks';
+import PropTypes from 'prop-types';
 
-function NewTeacher() {
-  const [teacherData, setTeacherData] = useState({
-    ime: '',
-    biografija: '',
-    organizacija: '',
-    tema: '',
-  });
+function EditTeacher(props) {
+  const teacherService = useTeachers();
 
+  const [teacherData, setTeacherData] = useState(props.teacher);
   const [formVisible, setFormVisible] = useState(false);
 
   const handleButtonClick = () => {
@@ -20,6 +18,9 @@ function NewTeacher() {
   const sendData = (event) => {
     event.preventDefault();
     console.log(teacherData);
+    teacherService.save(teacherData);
+    setFormVisible(false);
+    props.onDone();
   };
 
   function changeData(event) {
@@ -97,4 +98,9 @@ function NewTeacher() {
   );
 }
 
-export default NewTeacher;
+EditTeacher.propTypes = {
+  teacher: PropTypes.any,
+  onDone: PropTypes.func,
+};
+
+export default EditTeacher;

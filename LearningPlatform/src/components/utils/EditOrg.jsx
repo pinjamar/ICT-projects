@@ -1,12 +1,11 @@
 import { useState } from 'react';
+import { useOrgs } from '../crud/serviceHooks';
+import PropTypes from 'prop-types';
 
-function NewOrg() {
-  const [orgData, setOrgData] = useState({
-    ime: '',
-    opis: '',
-    radionice: '',
-  });
+function EditOrg(props) {
+  const orgsService = useOrgs();
 
+  const [orgData, setOrgData] = useState(props.orgs);
   const [formVisible, setFormVisible] = useState(false);
 
   const handleButtonClick = () => {
@@ -19,6 +18,9 @@ function NewOrg() {
   const sendData = (event) => {
     event.preventDefault();
     console.log(orgData);
+    orgsService.save(orgData);
+    setFormVisible(false);
+    props.onDone();
   };
 
   function changeData(event) {
@@ -84,4 +86,9 @@ function NewOrg() {
   );
 }
 
-export default NewOrg;
+EditOrg.propTypes = {
+  orgs: PropTypes.any,
+  onDone: PropTypes.func,
+};
+
+export default EditOrg;

@@ -2,15 +2,15 @@
 import TeacherCard from './TeacherCard';
 import ThemeFilter from '../common/filters/ThemeFilter';
 import OrganizationFilter from '../common/filters/OrganizationFilter';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import NewTeacher from '../utils/NewTeacher';
+import { useTeachers } from '../crud/serviceHooks';
 import './teachers.css';
 
-import { predavaci } from '../../../data';
-import { useState } from 'react';
-
 const Team = () => {
-  const [teachers, setTeachers] = useState(predavaci);
+  const teacherService = useTeachers();
+
+  const [teachers, setTeachers] = useState(teacherService.getAll());
   const [themeFilter, setThemeFilter] = useState(null);
   const [orgFilter, setOrgFilter] = useState(null);
 
@@ -23,7 +23,7 @@ const Team = () => {
   };
 
   const doFilter = () => {
-    let filteredTeachers = predavaci;
+    let filteredTeachers = teacherService.getAll();
     if (orgFilter) {
       filteredTeachers = filteredTeachers.filter(
         (e) => e.organizacija === orgFilter
@@ -39,7 +39,7 @@ const Team = () => {
     setTeachers(filteredTeachers);
   };
 
-  useEffect(doFilter, [themeFilter, orgFilter]);
+  useEffect(doFilter, [themeFilter, orgFilter, teacherService]);
 
   return (
     <section className="team padding">

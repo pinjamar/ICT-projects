@@ -1,15 +1,11 @@
 import { useState } from 'react';
+import { useCourses } from '../crud/serviceHooks';
+import PropTypes from 'prop-types';
 
-function NewCourse() {
-  const [courseData, setCourseData] = useState({
-    ime: '',
-    opis: '',
-    predavac: '',
-    datum: '',
-    tema: '',
-    tezina: '',
-  });
+function EditCourse(props) {
+  const radioniceService = useCourses();
 
+  const [courseData, setCourseData] = useState(props.course);
   const [formVisible, setFormVisible] = useState(false);
 
   const handleButtonClick = () => {
@@ -22,6 +18,9 @@ function NewCourse() {
   const sendData = (event) => {
     event.preventDefault();
     console.log(courseData);
+    radioniceService.save(courseData);
+    setFormVisible(false);
+    props.onDone();
   };
 
   function changeData(event) {
@@ -123,4 +122,9 @@ function NewCourse() {
   );
 }
 
-export default NewCourse;
+EditCourse.propTypes = {
+  course: PropTypes.any,
+  onDone: PropTypes.func,
+};
+
+export default EditCourse;

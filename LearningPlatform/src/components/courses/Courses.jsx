@@ -1,15 +1,15 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import CourseCard from './CourseCard';
 import ThemeFilter from '../common/filters/ThemeFilter';
 import DifficultyFilter from '../common/filters/DifficultyFilter';
 import NewCourse from '../utils/NewCourse';
+import { useCourses } from '../crud/serviceHooks';
 import './courses.css';
 
-import { radionice } from '../../../data';
-import { useState } from 'react';
-
 const Workshops = () => {
-  const [courses, setCourses] = useState(radionice);
+  const courseService = useCourses();
+
+  const [courses, setCourses] = useState(courseService.getAll());
 
   const [themeFilter, setThemeFilter] = useState(null);
   const [difFilter, setDifFilter] = useState(null);
@@ -23,7 +23,7 @@ const Workshops = () => {
   };
 
   const doFilter = () => {
-    let filteredCourses = radionice;
+    let filteredCourses = courseService.getAll();
     if (difFilter) {
       filteredCourses = filteredCourses.filter((e) => e.tezina === difFilter);
     }
@@ -37,7 +37,7 @@ const Workshops = () => {
     setCourses(filteredCourses);
   };
 
-  useEffect(doFilter, [themeFilter, difFilter]);
+  useEffect(doFilter, [themeFilter, difFilter, courseService]);
   return (
     <section className="course padding">
       <button className="add-course">
