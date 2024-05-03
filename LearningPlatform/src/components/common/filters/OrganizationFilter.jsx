@@ -1,11 +1,15 @@
 /* eslint-disable react/jsx-key */
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import { useOrgs } from '../../crud/serviceHooks';
 
 const OrganizationFilter = (props) => {
   const [selectedOrganization, setSelectedOrganization] = useState('all');
 
   const { onOrgChange } = props;
+
+  const orgService = useOrgs();
+  const orgs = orgService.getAll();
 
   const handleOptionChange = (event) => {
     let selectedValue = event.target.value;
@@ -27,33 +31,20 @@ const OrganizationFilter = (props) => {
         />
         Svi
       </label>
-      <label>
-        <input
-          type="radio"
-          value="Akademija Hogwarts"
-          checked={selectedOrganization === 'Akademija Hogwarts'}
-          onChange={handleOptionChange}
-        />
-        Akademija Hogwarts
-      </label>
-      <label>
-        <input
-          type="radio"
-          value="Institut Max Planck"
-          checked={selectedOrganization === 'Institut Max Planck'}
-          onChange={handleOptionChange}
-        />
-        Institut Max Planck
-      </label>
-      <label>
-        <input
-          type="radio"
-          value="Fakultet Ulica"
-          checked={selectedOrganization === 'Fakultet Ulica'}
-          onChange={handleOptionChange}
-        />
-        Fakultet Ulica
-      </label>
+
+      {orgs.map((it) => {
+        return (
+          <label key={it.id}>
+            <input
+              type="radio"
+              value={it.ime}
+              checked={selectedOrganization === it.ime}
+              onChange={handleOptionChange}
+            />
+            {it.ime}
+          </label>
+        );
+      })}
     </>
   );
 };

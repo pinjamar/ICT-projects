@@ -15,8 +15,8 @@ function AdminTeachers() {
   };
 
   const deleteTeacher = (id) => {
-    const updatedTeachers = predavaci.filter((teacher) => teacher.id !== id);
-    setPredavaci(updatedTeachers);
+    teacherService.deleteId(id);
+    reload();
   };
 
   const mapiraniPredavaci = predavaci.map((predavac) => (

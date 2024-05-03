@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { useOrgs } from '../crud/serviceHooks';
+import { useOrgs, useTeachers } from '../crud/serviceHooks';
 
-function NewTeacher() {
+function NewTeacher(props) {
+  const { reload } = props;
   const [teacherData, setTeacherData] = useState({
     ime: '',
     biografija: '',
@@ -11,6 +12,7 @@ function NewTeacher() {
 
   const [formVisible, setFormVisible] = useState(false);
   const orgService = useOrgs();
+  const teacherService = useTeachers();
   const orgs = orgService.getAll();
 
   const handleButtonClick = () => {
@@ -23,9 +25,20 @@ function NewTeacher() {
   const sendData = (event) => {
     event.preventDefault();
     console.log(teacherData);
+
     const organizacija = orgService.getSingle(teacherData.organizacija);
-    const toSave = { ...teacherData, organizacija: organizacija.ime };
-    console.log(toSave);
+
+    const teme = teacherData.tema.split(',');
+    const toSave = {
+      ...teacherData,
+      tema: teme,
+      organizacija: organizacija.ime,
+    };
+    teacherService.save(toSave);
+
+    reload();
+
+    setFormVisible(false);
   };
 
   function changeData(event) {

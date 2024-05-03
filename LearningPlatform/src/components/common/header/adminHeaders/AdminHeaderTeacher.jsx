@@ -2,7 +2,9 @@ import { Link } from 'react-router-dom';
 import NewTeacher from '../../../utils/NewTeacher';
 import '../header.css';
 
-const AdminHeaderCourse = () => {
+const AdminHeaderCourse = (props) => {
+  // eslint-disable-next-line react/prop-types
+  const { reload } = props;
   return (
     <div className="admin-header">
       <ul>
@@ -17,7 +19,7 @@ const AdminHeaderCourse = () => {
         </li>
       </ul>
       <button className="admin-btn">
-        <NewTeacher />
+        <NewTeacher reload={reload} />
       </button>
     </div>
   );

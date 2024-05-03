@@ -14,15 +14,9 @@ function AdminOrganization() {
     setOrganizacije(orgsService.getAll());
   };
 
-  // const deleteOrg = (id) => {
-  //   const updatedOrgs = organizacije.filter(
-  //     (organizacija) => organizacija.id !== id
-  //   );
-  //   setOrganizacije(updatedOrgs);
-  // };
-
   const deleteOrg = (id) => {
-    orgsService.delete(id);
+    orgsService.deleteId(id);
+    reload();
   };
 
   const mapiraneOrganizacije = organizacije.map((organizacija) => (
