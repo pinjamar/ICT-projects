@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useOrgs, useTeachers } from '../crud/serviceHooks';
 
 function NewTeacher(props) {
+  // eslint-disable-next-line react/prop-types
   const { reload } = props;
   const [teacherData, setTeacherData] = useState({
     ime: '',

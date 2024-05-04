@@ -2,9 +2,14 @@
 import PropTypes from 'prop-types'; // ES6
 import EditCourse from '../utils/EditCourse';
 import CourseApply from '../common/modals/CourseApply';
+import { Link } from 'react-router-dom';
 
 const CourseCard = (props) => {
   const { cover, ime, opis, predavac } = props.course;
+
+  const handleButtonClick = () => {
+    console.log('clicked');
+  };
 
   return (
     <div className="coursesCard">
@@ -22,12 +27,14 @@ const CourseCard = (props) => {
               <h4>Predavač: {predavac}</h4>
             </div>
             <div className="courses-buttons">
-              <button className="course-btn-apply">
+              <button className="course-btn-apply" onClick={handleButtonClick}>
                 <CourseApply />
               </button>
-              <button className="course-btn-edit">
-                <EditCourse />
-              </button>
+              <Link to="/admin">
+                <button className="course-btn-edit">
+                  <EditCourse />
+                </button>
+              </Link>
             </div>
           </div>
         </div>

@@ -31,7 +31,6 @@ const OrganizationFilter = (props) => {
         />
         Svi
       </label>
-
       {orgs.map((it) => {
         return (
           <label key={it.id}>

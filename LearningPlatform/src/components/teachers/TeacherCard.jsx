@@ -40,9 +40,11 @@ const TeacherCard = (props) => {
         <Link to="/radionice">
           <button className="teacher-courses">Pregledaj radionice</button>
         </Link>
-        <button className="edit-teacher">
-          <EditTeacher />
-        </button>
+        <Link to="/admin/predavaci">
+          <button className="edit-teacher">
+            <EditTeacher />
+          </button>
+        </Link>
       </div>
     </div>
   );
