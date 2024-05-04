@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Head from './Head';
+import { AdminProvider } from './AdminContext';
+import { useAdmin, useAdminUpdate } from './AdminContext';
 import './header.css';
 
 const Header = () => {
@@ -10,8 +12,12 @@ const Header = () => {
   const handleToggleAdmin = () => {
     setIsAdmin(!isAdmin);
   };
+
+  const admin = useAdmin();
+  const adminUpdate = useAdminUpdate();
+
   return (
-    <>
+    <AdminProvider>
       <Head />
       <header>
         <nav className="flexSB">
@@ -53,9 +59,10 @@ const Header = () => {
               <i className="fa fa-bars"></i>
             )}
           </button>
+          <button onClick={adminUpdate}>TEST</button>
         </nav>
       </header>
-    </>
+    </AdminProvider>
   );
 };
 
