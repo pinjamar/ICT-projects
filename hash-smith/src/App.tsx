@@ -1,6 +1,7 @@
 import './App.css';
 import SmallContainer from './components/SmallContainer';
 import BigContainer from './components/BigContainer';
+import MinerModal from './components/MinerModal';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <BigContainer />
         <BigContainer />
       </div>
+      <MinerModal />
     </>
   );
 }
