@@ -1,8 +1,5 @@
 .small-container,
 .big-container {
-  /* display: flex;
-  justify-content: center;
-  flex-direction: row; */
   border: 1px solid gray;
   border-radius: 5px;
   padding: 10px 0;
@@ -24,8 +21,7 @@
 
 .miner {
   background-color: green;
-  height: 15px;
-  width: 15px;
+  width: 22px;
   margin: 3px;
   border-radius: 5px;
 }
@@ -65,4 +61,9 @@
 }
 span {
   font-weight: bold;
+}
+
+.modal-button {
+  position: absolute;
+  z-index: 10;
 }

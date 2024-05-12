@@ -11,7 +11,7 @@ const MinerModal = () => {
   };
   return (
     <>
-      <div onClick={handleModalClick}>MINER</div>
+      <div onClick={handleModalClick}>&nbsp;M</div>
       {modalVisible && (
         <div className="modal">
           <div className="modal-content">
@@ -28,12 +28,13 @@ const MinerModal = () => {
             <p>
               <span>freq</span> - frekvencija
             </p>
-            <p>w - trenutna snaga minera</p>
+            <p>
+              <span>w </span>- trenutna snaga minera
+            </p>
             <p>
               <span>s</span> - stanje minera (10 - OK, 20 - gubitak hashratea,
               30 - upozorenje, 40 - manji problemi, 50 - veći problemi, 60 -
-              stanje kritično, boje možete kopirati kao gore ili mapirat
-              proizvoljno)
+              stanje kritično)
             </p>
             <p>
               <span>pdu</span> - grupa

@@ -1,27 +1,32 @@
 import './App.css';
-import SmallContainer from './components/SmallContainer';
-import BigContainer from './components/BigContainer';
-import MinerModal from './components/MinerModal';
+import FirstContainer from './components/FirstContainer';
+import SecondContainer from './components/SecondContainer';
+import ThirdContainer from './components/ThirdContainer';
+import FourthContainer from './components/FourthContainer';
+import FifthContainer from './components/FifthContainer';
+import SixthContainer from './components/SixthContainer';
+import SeventhContainer from './components/SeventhContainer';
+import EighthContainer from './components/EighthContainer';
+import NinthContainer from './components/NinthContainer';
 
 function App() {
   return (
     <>
       <div className="small-containers-group">
-        <SmallContainer />
-        <SmallContainer />
-        <SmallContainer />
+        <FirstContainer />
+        <SecondContainer />
+        <ThirdContainer />
       </div>
       <div className="big-containers-group-one">
-        <BigContainer />
-        <BigContainer />
-        <BigContainer />
+        <FourthContainer />
+        <FifthContainer />
+        <SixthContainer />
       </div>
       <div className="big-containers-group-two">
-        <BigContainer />
-        <BigContainer />
-        <BigContainer />
+        <SeventhContainer />
+        <EighthContainer />
+        <NinthContainer />
       </div>
-      <MinerModal />
     </>
   );
 }
