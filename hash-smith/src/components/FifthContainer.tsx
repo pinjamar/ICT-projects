@@ -1,5 +1,6 @@
 import Data from '../../miners.json';
 import './containers.css';
+import Miner from './Miner';
 
 const FifthContainer = () => {
   return (
@@ -7,24 +8,14 @@ const FifthContainer = () => {
       <div className="big-first-row">
         {Data[19].values
           .map((miner, idx) => {
-            if (miner.pdu == 5)
-              return (
-                <div className="miner" key={idx}>
-                  {miner.port}
-                </div>
-              );
+            if (miner.pdu == 5) return <Miner miner={miner} key={idx} />;
           })
           .slice(72, 81)}
       </div>
       <div className="big-second-row">
         {Data[19].values
           .map((miner, idx) => {
-            if (miner.pdu == 5)
-              return (
-                <div className="miner" key={idx}>
-                  {miner.port}
-                </div>
-              );
+            if (miner.pdu == 5) return <Miner miner={miner} key={idx} />;
           })
           .slice(81, 90)}
       </div>
