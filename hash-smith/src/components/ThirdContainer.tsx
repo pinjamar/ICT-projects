@@ -1,6 +1,5 @@
 import Data from '../../miners.json';
 import './containers.css';
-import MinerModal from './MinerModal';
 import Miner from './Miner';
 
 const ThirdContainer = () => {
